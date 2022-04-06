@@ -1,0 +1,16 @@
+@mixin flexLayout(
+  $horizontal: center,
+  $vertical: center,
+  $isColumn: false,
+  $wrap: false
+) {
+  display: flex;
+  justify-content: $horizontal;
+  align-items: $vertical;
+  @if ($isColumn) {
+    flex-direction: column;
+  }
+  @if ($wrap) {
+    flex-wrap:wrap;
+  }
+}
