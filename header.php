@@ -26,17 +26,22 @@
 	<?php wp_body_open(); ?>
 	<div id="page" class="site">
 		<header id="masthead" class="l_site__header">
-			<div class='c-logo'>
-				<?php the_custom_logo(); ?>
+			<div class='l_site__top-bar c-top-bar'>
+				<!-- top-bar-content -->
 			</div>
-			<nav id="site-navigation" class="c-nav js-nav main-navigation is-not-active">
-				<?php
-				wp_nav_menu(array(
-					'theme_location' => 'menu-1',
-					'container'		 =>	'none',
-					'menu_id'        => 'primary-menu',
-					'menu_class' 	 => 'c-nav'
-				));
-				?>
-			</nav>
+			<div class='l_site__header-main'>
+				<div class='c-logo'>
+					<?php the_custom_logo(); ?>
+				</div>
+				<nav id="site-navigation" class="c-nav js-nav">
+					<?php
+					wp_nav_menu(array(
+						'theme_location' => 'menu-1',
+						'container'		 =>	'none',
+						'menu_id'        => 'primary-menu',
+						'menu_class' 	 => 'c-nav'
+					));
+					?>
+				</nav>
+			</div>
 		</header>
