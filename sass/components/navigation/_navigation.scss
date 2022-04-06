@@ -1,3 +1,18 @@
+// custom
+.c-nav {
+	ul {
+		list-style-type: none;
+		li {
+			list-style-type: none;
+			a {
+				text-decoration: none;
+				text-transform: var(--hctc-header-nav-text-transform);
+				color: var(--hctc-header-nav-color);
+			}
+		}
+	}
+}
+// native
 .main-navigation {
 	display: block;
 	width: 100%;
@@ -22,7 +37,6 @@
 			}
 
 			li {
-
 				&:hover > ul,
 				&.focus > ul {
 					display: block;
@@ -76,7 +90,6 @@
 }
 
 @media screen and (min-width: 37.5em) {
-
 	.menu-toggle {
 		display: none;
 	}
@@ -89,7 +102,6 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-
 	.site-main & {
 		margin: 0 0 1.5em;
 	}
