@@ -1,0 +1,13 @@
+@use "sass:map";
+@use "sass:list";
+
+.c-top-bar {
+  @if (map.get($hctc-theme-variables, "header-top-bar-active") == false) {
+    display: none;
+  } @else {
+    @include flexLayout;
+  }
+  width: 100%;
+  height: var(--hctc-header-top-bar-height);
+  background-color: var(--hctc-header-top-bar-color-bg);
+}
