@@ -1,3 +1,13 @@
+$theme-prefix: hctc;
+// scss variables
+$hctc-theme-variables: (
+  "layout-desktop-width": 1280px,
+);
+
+// expose variables
 :root {
-  --layout-width-desktop: 1200px;
+  // Custom theme variables
+  @each $key, $value in $hctc-theme-variables {
+    --#{$theme-prefix}-#{$key}: #{$value};
+  }
 }
