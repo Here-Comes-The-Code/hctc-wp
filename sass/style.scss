@@ -54,6 +54,30 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "abstracts/abstracts";
 
 /*--------------------------------------------------------------
+# Theme
+--------------------------------------------------------------*/
+
+/* Variables
+--------------------------------------------- */
+@import "theme/variables";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Breakpoints
+--------------------------------------------- */
+@import "utilities/breakpoints";
+
+/* Accessibility
+--------------------------------------------- */
+@import "utilities/accessibility";
+
+/* Alignments
+--------------------------------------------- */
+@import "utilities/alignments";
+
+/*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
 
@@ -75,6 +99,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 // @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
 // @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
+@import "layouts/site";
 
 /*--------------------------------------------------------------
 # Components
@@ -88,19 +113,3 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Jetpack infinite scroll
 --------------------------------------------- */
 @import "plugins/jetpack/infinite-scroll";
-
-/*--------------------------------------------------------------
-# Utilities
---------------------------------------------------------------*/
-
-/* Accessibility
---------------------------------------------- */
-@import "utilities/accessibility";
-
-/* Alignments
---------------------------------------------- */
-@import "utilities/alignments";
-
-body { 
-	background-color: red !important;
- }
