@@ -1,31 +1,22 @@
-@mixin padding-max-width($pmw) {
-  padding-left: calc((100vw - 940px) / 2);
-  padding-right: calc((100vw - 940px) / 2);
+@use "sass:map";
+
+@mixin padding-max-width {
+  padding-left: calc(
+    (100vw - map.get($hctc-theme-variables, "layout-desktop-width")) / 2
+  );
+  padding-right: calc(
+    (100vw - map.get($hctc-theme-variables, "layout-desktop-width")) / 2
+  );
 }
 
-@media only screen and (min-width: 320px) {
-}
-
-@media only screen and (min-width: 480px) {
-}
-
-@media only screen and (min-width: 768px) {
-}
-
-@media only screen and (min-width: 1024px) {
-}
-
-@media only screen and (min-width: 1140px) {
-}
-
-@media only screen and (min-width: 1280px) {
-}
-
-@media print,
-  (-o-min-device-pixel-ratio: 5/4),
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 120dpi) {
-}
+$breakpoints: (
+  "xs": 320px,
+  "sm": 480px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1140px,
+  "xxl": 1200px,
+);
 
 // Responsiveness mixins
 @mixin min-xs {
