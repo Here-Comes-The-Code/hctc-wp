@@ -1,5 +1,6 @@
 @use "sass:map";
 
+// max-width-container
 @mixin padding-max-width {
   padding-left: calc(
     (100vw - map.get($hctc-theme-variables, "layout-desktop-width")) / 2
