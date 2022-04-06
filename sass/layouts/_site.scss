@@ -8,6 +8,8 @@
       width: 100%;
       @include flexLayout(space-between, center, false, true);
       @include restrict-desktop-width;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
     }
   }
 }

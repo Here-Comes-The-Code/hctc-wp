@@ -11,6 +11,44 @@
     flex-direction: column;
   }
   @if ($wrap) {
-    flex-wrap:wrap;
+    flex-wrap: wrap;
+  }
+}
+
+@mixin addPadding($horizontal, $vertical, $bottom, $left) {
+  @if ($horizontal and $vertical and $bottom and $left) {
+    padding-top: $horizontal;
+    padding-right: $vertical;
+    padding-bottom: $bottom;
+    padding-left: $left;
+  } @else if ($horizontal and $vertical) {
+    padding-top: $vertical;
+    padding-bottom: $vertical;
+    padding-left: $horizontal;
+    padding-right: $horizontal;
+  } @else {
+    padding-top: $horizontal;
+    padding-bottom: $horizontal;
+    padding-left: $horizontal;
+    padding-right: $horizontal;
+  }
+}
+
+@mixin addMargin($horizontal, $vertical, $bottom, $left) {
+  @if ($horizontal and $vertical and $bottom and $left) {
+    margin-top: $horizontal;
+    margin-right: $vertical;
+    margin-bottom: $bottom;
+    margin-left: $left;
+  } @else if ($horizontal and $vertical) {
+    margin-top: $vertical;
+    margin-bottom: $vertical;
+    margin-left: $horizontal;
+    margin-right: $horizontal;
+  } @else {
+    margin-top: $horizontal;
+    margin-bottom: $horizontal;
+    margin-left: $horizontal;
+    margin-right: $horizontal;
   }
 }
