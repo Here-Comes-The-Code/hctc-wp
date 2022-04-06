@@ -1,7 +1,19 @@
+@import "palette";
+
 $theme-prefix: hctc;
 // scss variables
 $hctc-theme-variables: (
+  // layout
   "layout-desktop-width": 1280px,
+  // header
+  // - logo
+  "header-logo-max-width": 100px,
+  // - top-bar
+  "header-top-bar-active": true,
+  "header-top-bar-height": 46px,
+  "header-top-bar-color-bg": var(--hctc-theme-color-1),
+  // palette
+  "theme-color-1": color(RED)
 );
 
 // expose variables

@@ -1,10 +1,17 @@
 .l_site {
   &__header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    @include min-xxl {
-      @include padding-max-width;
+    @include flexLayout(space-between, center, false, true);
+    &-top-bar {
+      @include min-xxl {
+        @include padding-max-width;
+      }
+    }
+    &-main {
+      width:100%;
+      @include flexLayout(space-between, center, false, true);
+      @include min-xxl {
+        @include padding-max-width;
+      }
     }
   }
 }

@@ -1,0 +1,15 @@
+@use "sass:map";
+
+// helper
+@function color($code, $default: #000) {
+  $color: map.get($hctc-colors, $code);
+  @if ($color) {
+    @return $color;
+  } @else {
+    @return $default;
+  }
+}
+
+$hctc-colors: (
+  RED: #a31a0e,
+);
