@@ -1,0 +1,10 @@
+.l_site {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include min-xxl {
+      @include padding-max-width;
+    }
+  }
+}
