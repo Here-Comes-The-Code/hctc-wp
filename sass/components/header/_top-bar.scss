@@ -10,4 +10,5 @@
   width: 100%;
   height: var(--hctc-header-top-bar-height);
   background-color: var(--hctc-header-top-bar-color-bg);
+  @include restrict-desktop-width;
 }
