@@ -14,10 +14,13 @@ $hctc-theme-variables: (
   "header-top-bar-color-bg": var(--hctc-theme-color-1),
   // - nav
   "header-nav-text-transform": capitalize,
-  "header-nav-color": var(--hctc-theme-color-2),
+  "header-nav-color": var(--hctc-theme-color-1),
+  "header-nav-font-weight": 600,
   // palette
   "theme-color-1": color(RED),
-  "theme-color-2": color(BLACK)
+  "theme-color-2": color(BLACK),
+  // transition
+  "transition-global": 0.3s
 );
 
 // expose variables
