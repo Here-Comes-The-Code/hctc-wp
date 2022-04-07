@@ -35,6 +35,9 @@
 		&-btn {
 			position: relative;
 			z-index: 1;
+			@include toggleMobileNav {
+				display: none;
+			}
 		}
 	}
 }

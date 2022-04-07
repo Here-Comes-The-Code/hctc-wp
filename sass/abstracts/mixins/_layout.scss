@@ -65,14 +65,14 @@
   background-color: $bgColor;
   transition: var(--hctc-transition-global);
   @if ($transformSide != horizontal) {
-    transform: translateY(-100%);
+    top: -100%;
     &.is-active {
-      transform: translateY(0);
+      top: 0;
     }
   } @else if($transformSide == horizontal) {
-    transform: translateX(-100%);
+    left: -100%;
     &.is-active {
-      transform: translateX(0);
+      left: 0;
     }
   }
 }
