@@ -1,3 +1,20 @@
+@use "sass:map";
+
+// helper
+@function color($code, $default: #000) {
+  $color: map.get($hctc-colors, $code);
+  @if ($color) {
+    @return $color;
+  } @else {
+    @return $default;
+  }
+}
+
+$hctc-colors: (
+  RED: #a31a0e,
+  BLACK: #000,
+);
+
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
