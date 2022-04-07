@@ -33,13 +33,16 @@
 				<div class='c-logo'>
 					<?php the_custom_logo(); ?>
 				</div>
+				<button class='c-nav--mobile-btn js-mobile-nav-trigger'>
+					mobile
+				</button>
 				<nav id="site-navigation" class="c-nav js-nav">
 					<?php
 					wp_nav_menu(array(
 						'theme_location' => 'menu-1',
 						'container'		 =>	'none',
 						'menu_id'        => 'primary-menu',
-						'menu_class' 	 => 'c-nav'
+						'menu_class' 	 => 'c-nav__menu'
 					));
 					?>
 				</nav>
