@@ -2,12 +2,14 @@
 
 // max-width-container
 @mixin padding-max-width {
-  padding-left: calc(
-    (100vw - map.get($hctc-theme-variables, "layout-desktop-width")) / 2
-  );
-  padding-right: calc(
-    (100vw - map.get($hctc-theme-variables, "layout-desktop-width")) / 2
-  );
+  @media only screen and (min-width: map.get($hctc-theme-variables, "layout-desktop-width")) {
+    padding-left: calc(
+      (100vw - map.get($hctc-theme-variables, "layout-desktop-width")) / 2
+    );
+    padding-right: calc(
+      (100vw - map.get($hctc-theme-variables, "layout-desktop-width")) / 2
+    );
+  }
 }
 
 @mixin restrict-desktop-width {
