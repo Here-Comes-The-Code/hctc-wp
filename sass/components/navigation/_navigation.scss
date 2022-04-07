@@ -1,21 +1,40 @@
-// custom
+//
+@mixin toggleMobileNav {
+	@include min-md {
+		@content;
+	}
+}
 .c-nav {
+	// mobile menu styles
+	@include flexLayout(center, center, false, true);
+	@include max-md {
+		@include mobileNav;
+	}
 	ul {
 		margin: 0;
 		padding: 0;
 		list-style-type: none;
+
 		li {
 			list-style-type: none;
 			&.current-menu-item {
 				@extend .c-nav--current-item;
 			}
 			a {
-				font-weight:600;
-				color: var(--hctc-header-nav-color);
+				font-weight: 600;
 				text-decoration: none;
 				text-transform: var(--hctc-header-nav-text-transform);
-				color: var(--hctc-header-nav-color);
+				color: var(--hctc-header-nav-mobile-color);
+				@include toggleMobileNav() {
+					color: var(--hctc-header-nav-color);
+				}
 			}
+		}
+	}
+	&--mobile {
+		&-btn {
+			position: relative;
+			z-index: 1;
 		}
 	}
 }

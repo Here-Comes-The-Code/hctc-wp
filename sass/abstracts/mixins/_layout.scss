@@ -52,3 +52,27 @@
     margin-right: $horizontal;
   }
 }
+
+@mixin mobileNav(
+  $transformSide: horizontal,
+  $bgColor: var(--hctc-header-nav-mobile-bg-color)
+) {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: $bgColor;
+  transition: var(--hctc-transition-global);
+  @if ($transformSide != horizontal) {
+    transform: translateY(-100%);
+    &.is-active {
+      transform: translateY(0);
+    }
+  } @else if($transformSide == horizontal) {
+    transform: translateX(-100%);
+    &.is-active {
+      transform: translateX(0);
+    }
+  }
+}
