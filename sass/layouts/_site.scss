@@ -1,16 +1,16 @@
 .l_site {
   &__header {
-    @include flexLayout(space-between, center, false, true);
+    @include flexLayout(space-between, center, row, wrap);
     &-top-bar {
       @include restrict-desktop-width;
     }
     &-main {
       width: 100%;
-      @include flexLayout(space-between, center, false, true);
-      padding: 0 1rem;
+      @include flexLayout(space-between, center, row, wrap);
+      padding: 0 var(--hctc-spacing-lg);
       @include restrict-desktop-width;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      padding-top: var(--hctc-spacing-md);
+      padding-bottom: var(--hctc-spacing-md);
     }
   }
 }

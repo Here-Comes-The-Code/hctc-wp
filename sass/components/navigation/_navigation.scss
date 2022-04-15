@@ -6,7 +6,7 @@
 }
 .c-nav {
 	// mobile menu styles
-	@include flexLayout(center, center, false, true);
+	@include flexLayout(center, center, row, wrap);
 	@include max-md {
 		@include mobileNav;
 	}
@@ -21,12 +21,16 @@
 				@extend .c-nav--current-item;
 			}
 			a {
-				font-weight: 600;
+				font-weight: var(--hctc-header-nav-font-weight);
 				text-decoration: none;
 				text-transform: var(--hctc-header-nav-text-transform);
 				color: var(--hctc-header-nav-mobile-color);
+				font-size: var(--hctc-font-lg);
+				margin-bottom: var(--hctc-spacing-lg);
 				@include toggleMobileNav() {
-					color: var(--hctc-header-nav-mobile-color);
+					margin-bottom: none;
+					font-size: var(--hctc-font-md);
+					color: var(--hctc-header-nav-color);
 				}
 			}
 		}

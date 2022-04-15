@@ -1,5 +1,12 @@
 .c-logo {
-  img {
-    max-width: var(--hctc-header-logo-max-width);
+  a {
+    @include flexLayout(center, center);
+    img {
+      transition: var(--hctc-transition-global);
+      max-width: var(--hctc-header-logo-max-width);
+      @include onHover {
+        filter: brightness(1.02);
+      }
+    }
   }
 }
