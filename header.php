@@ -33,7 +33,7 @@
 				<div class='c-logo'>
 					<?php the_custom_logo(); ?>
 				</div>
-				<button class='c-nav--mobile-btn js-mobile-nav-trigger '>
+				<button class='c-btn c-btn--primary c-nav--mobile-btn js-mobile-nav-trigger '>
 					<i class="las la-bars"></i>
 				</button>
 				<nav id="site-navigation" class="c-nav js-nav">
