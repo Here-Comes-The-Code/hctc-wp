@@ -143,6 +143,8 @@ add_action('widgets_init', 'hctc_widgets_init');
  */
 function hctc_scripts()
 {
+	// add icons
+	wp_enqueue_style('icons8', '//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css');
 	wp_enqueue_style('hctc-style', get_template_directory_uri() . '/dist/style.css', array(), _S_VERSION);
 	wp_style_add_data('hctc-style', 'rtl', 'replace');
 	wp_enqueue_script('hctc-custom-js', get_template_directory_uri() . '/dist/script.js', array(), [], true);
