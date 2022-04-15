@@ -48,3 +48,17 @@
 		}
 	}
 }
+
+@mixin onHover {
+	&:hover,
+	&:focus,
+	&:active {
+		@content;
+	}
+}
+@mixin onToggleActive {
+	&.active,
+	&.is-active {
+		@content;
+	}
+}
