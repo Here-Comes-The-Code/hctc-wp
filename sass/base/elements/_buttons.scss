@@ -1,21 +1,58 @@
+// button,
+// input[type="button"],
+// input[type="reset"],
+// input[type="submit"] {
+// 	border: 1px solid;
+// 	border-color: $color__border-button;
+// 	border-radius: 3px;
+// 	background: $color__background-button;
+// 	color: rgba(0, 0, 0, 0.8);
+// 	line-height: 1;
+// 	padding: 0.6em 1em 0.4em;
+
+// 	&:hover {
+// 		border-color: $color__border-button-hover;
+// 	}
+
+// 	&:active,
+// 	&:focus {
+// 		border-color: $color__border-button-focus;
+// 	}
+// }
+
+// default btn styles
 button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	border-radius: 3px;
-	background: $color__background-button;
-	color: rgba(0, 0, 0, 0.8);
+.c-btn {
+	background-color: var(--hctc-btn-default-bg-color);
+	color: var(--hctc-btn-default-font-color);
+	border: 1px solid var(--hctc-btn-default-border-color);
+	padding: var(--hctc-spacing-md) var(--hctc-spacing-lg);
+	border: unset;
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
-
-	&:hover {
-		border-color: $color__border-button-hover;
+	box-shadow: var(--hctc-box-shadow-gray-light-1),
+		inset var(--hctc-box-shadow-gray-light-0);
+	transition: var(--hctc-transition-global);
+	border-radius: var(--hctc-border-radius-md);
+	cursor: pointer;
+	font-size: var(--hctc-font-lg);
+	font-weight: var(--hctc-btn-font-weight);
+	&:hover,
+	&:focus,
+	&:active {
+		box-shadow: var(--hctc-box-shadow-gray-light-0),
+			inset var(--hctc-box-shadow-gray-light-1);
 	}
+}
 
-	&:active,
-	&:focus {
-		border-color: $color__border-button-focus;
+.c-btn {
+	&--primary {
+		background-color: var(--hctc-btn-primary-bg-color);
+		color: var(--hctc-btn-primary-font-color);
+		border: 1px solid var(--hctc-btn-primary-border-color);
+		@include onHover {
+			background-color: var(--hctc-btn-primary-bg-color-active);
+			color: var(--hctc-btn-primary-font-color-active);
+			border: 1px solid var(--hctc-btn-primary-border-color-active);
+		}
 	}
 }

@@ -26,7 +26,7 @@
 				text-transform: var(--hctc-header-nav-text-transform);
 				color: var(--hctc-header-nav-mobile-color);
 				@include toggleMobileNav() {
-					color: var(--hctc-header-nav-color);
+					color: var(--hctc-header-nav-mobile-color);
 				}
 			}
 		}
@@ -37,6 +37,11 @@
 			z-index: 1;
 			@include toggleMobileNav {
 				display: none;
+			}
+			@include onToggleActive {
+				background-color: var(--hctc-theme-color-3);
+				color: var(--hctc-theme-color-1);
+				border: 1px solid transparent;
 			}
 		}
 	}
