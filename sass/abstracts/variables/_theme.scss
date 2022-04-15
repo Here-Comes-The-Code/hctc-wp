@@ -23,7 +23,14 @@ $hctc-theme-variables: (
   "theme-color-1": color(RED),
   "theme-color-2": color(BLACK),
   // transition
-  "transition-global": 0.3s
+  "transition-global": 0.3s,
+  // spacing
+  "spacing-xs": 0.1rem,
+  "spacing-sm": 0.3rem,
+  "spacing-md": 0.6rem,
+  "spacing-lg": 1rem,
+  "spacing-xl": 1.3rem,
+  "spacing-xxl": 1.6rem
 );
 
 // expose variables
