@@ -57,6 +57,9 @@
   $transformSide: horizontal,
   $bgColor: var(--hctc-header-nav-mobile-bg-color)
 ) {
+  /*    */
+  backdrop-filter: blur(5px);
+  /*    */
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -64,6 +67,7 @@
   top: 0;
   background-color: $bgColor;
   transition: var(--hctc-transition-global);
+  z-index: var(--hctc-zindex-above-1);
   @if ($transformSide != horizontal) {
     top: -100%;
     &.is-active {

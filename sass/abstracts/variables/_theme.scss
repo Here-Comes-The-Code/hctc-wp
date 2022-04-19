@@ -16,7 +16,7 @@ $hctc-theme-variables: (
   "header-nav-font-weight": 600,
   // - nav - mobile
   "header-nav-mobile-color": var(--hctc-theme-color-3),
-  "header-nav-mobile-bg-color": var(--hctc-theme-color-1),
+  "header-nav-mobile-bg-color": transparentize(color(RED), 0.7),
   // footer
   "footer-text": var(--hctc-theme-color-3),
   "footer-text-author": #444,
@@ -63,7 +63,9 @@ $hctc-theme-variables: (
   "btn-primary-font-color-active": var(--hctc-theme-color-3),
   "btn-primary-border-color-active": var(--hctc-theme-color-1),
   // zindex
-  "zindex-under": -1
+  "zindex-under": -1,
+  "zindex-above-1": 10,
+  "zindex-above-2": 100
 );
 
 // expose variables
