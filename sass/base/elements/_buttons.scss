@@ -56,3 +56,33 @@ button,
 		}
 	}
 }
+
+@mixin defaultLinkStyles {
+	text-decoration: unset;
+	color: inherit;
+	transition: var(--hctc-transition-global);
+	cursor: pointer;
+	text-decoration: unset;
+	display: inline-block;
+	@include onHover {
+		color: inherit;
+		transform: translateY(-1px);
+	}
+}
+
+// default anchor element styling
+a {
+	@include defaultLinkStyles;
+}
+
+.c-link {
+	@include defaultLinkStyles;
+	&--author {
+		color: var(--hctc-footer-text-author);
+		@include onHover {
+			letter-spacing: var(--hctc-letter-spacing-sm);
+			filter: brightness(1.1);
+			color: var(--hctc-footer-text-author);
+		}
+	}
+}
