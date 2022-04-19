@@ -1,5 +1,3 @@
-@import "palette";
-
 $theme-prefix: hctc;
 // scss variables
 $hctc-theme-variables: (
@@ -19,6 +17,9 @@ $hctc-theme-variables: (
   // - nav - mobile
   "header-nav-mobile-color": var(--hctc-theme-color-3),
   "header-nav-mobile-bg-color": var(--hctc-theme-color-1),
+  // footer
+  "footer-text": var(--hctc-theme-color-3),
+  "footer-text-author": #444,
   // palette
   "theme-color-1": color(RED),
   "theme-color-2": color(BLACK),
@@ -39,6 +40,8 @@ $hctc-theme-variables: (
   "font-lg": 1.25rem,
   "font-xl": 2rem,
   "font-xxl": 3rem,
+  // letter spacing
+  "letter-spacing-sm": 1px,
   // spacing
   "spacing-xs": 0.1rem,
   "spacing-sm": 0.3rem,
@@ -58,7 +61,9 @@ $hctc-theme-variables: (
   "btn-primary-border-color": var(--hctc-theme-color-1),
   "btn-primary-bg-color-active": var(--hctc-theme-color-1),
   "btn-primary-font-color-active": var(--hctc-theme-color-3),
-  "btn-primary-border-color-active": var(--hctc-theme-color-1)
+  "btn-primary-border-color-active": var(--hctc-theme-color-1),
+  // zindex
+  "zindex-under": -1
 );
 
 // expose variables
