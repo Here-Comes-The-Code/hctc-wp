@@ -1,0 +1,54 @@
+footer {
+  @include restrict-desktop-width;
+  @include addBg("../assets/footer-bg.png");
+}
+
+.c-footer {
+  &--icon {
+    &-info {
+      @include addIcon(
+        "\f05a",
+        var(--hctc-font-xl),
+        0,
+        calc(-2 * var(--hctc-spacing-xl)),
+        absolute
+      );
+    }
+    &-phone {
+      @include addIcon(
+        "\f2a0",
+        var(--hctc-font-xl),
+        0,
+        calc(-2 * var(--hctc-spacing-xl)),
+        absolute
+      );
+    }
+    &-envelope {
+      @include addIcon(
+        "\f0e0",
+        var(--hctc-font-xl),
+        0,
+        calc(-2 * var(--hctc-spacing-xl)),
+        absolute
+      );
+    }
+    &-map-marker {
+      @include addIcon(
+        "\f041",
+        var(--hctc-font-xl),
+        0,
+        calc(-2 * var(--hctc-spacing-xl)),
+        absolute
+      );
+    }
+    &-sitemap {
+      @include addIcon(
+        "\f0e8",
+        var(--hctc-font-xl),
+        0,
+        calc(-2 * var(--hctc-spacing-xxl)),
+        absolute
+      );
+    }
+  }
+}

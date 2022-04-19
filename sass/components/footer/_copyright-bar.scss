@@ -1,0 +1,14 @@
+.c-footer {
+  &__bottom {
+    text-align: center;
+    padding: var(--hctc-spacing-md);
+    color: var(--hctc-footer-text);
+    font-size: var(--hctc-font-sm);
+    position: relative;
+
+    .c-link.c-link--author {
+      position: absolute;
+      right: var(--hctc-spacing-xxl);
+    }
+  }
+}
