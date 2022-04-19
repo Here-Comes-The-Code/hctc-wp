@@ -7,8 +7,65 @@
   } @else {
     @include flexLayout;
   }
+  flex-wrap: wrap;
   width: 100%;
-  height: var(--hctc-header-top-bar-height);
+  height: fit-content;
+  @include min-md {
+    height: var(--hctc-header-top-bar-height);
+  }
   background-color: var(--hctc-header-top-bar-color-bg);
   @include restrict-desktop-width;
+
+  > a:first-child {
+    @include min-md {
+      @include pull(left);
+    }
+  }
+  &__data {
+    @include max-md {
+      flex: 0 1 100%;
+      text-align: center;
+      justify-content: center;
+    }
+    @include flexLayout(flex-start, center);
+    color: var(--hctc-header-top-bar-font-color);
+    gap: var(--hctc-spacing-md);
+    &:not(:last-child):not(:first-child) {
+      margin: 0 var(--hctc-spacing-xl);
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
+.c-header {
+  &--icon {
+    &-phone {
+      @include addIcon(
+        "\f2a0",
+        var(--hctc-font-lg),
+        0,
+        // calc(-2 * var(--hctc-spacing-xl)),
+        // absolute
+      );
+    }
+    &-envelope {
+      @include addIcon(
+        "\f0e0",
+        var(--hctc-font-lg),
+        0,
+        // calc(-2 * var(--hctc-spacing-xl)),
+        // absolute
+      );
+    }
+    &-map-marker {
+      @include addIcon(
+        "\f041",
+        var(--hctc-font-lg),
+        0,
+        // calc(-2 * var(--hctc-spacing-xl)),
+      );
+    }
+  }
 }

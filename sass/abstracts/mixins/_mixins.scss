@@ -67,7 +67,7 @@
 	position: relative;
 	&::before {
 		content: " ";
-		background-size:cover;
+		background-size: cover;
 		background-image: url($url);
 		background-position: $position;
 		position: absolute;
@@ -75,5 +75,18 @@
 		width: 100%;
 		height: 100%;
 		z-index: var(--hctc-zindex-under);
+	}
+}
+
+@mixin pull($where) {
+	@if ($where == left) {
+		margin-right: auto;
+	}
+	@if ($where == right) {
+		margin-left: auto;
+	}
+	@if ($where == center) {
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
