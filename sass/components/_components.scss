@@ -3,6 +3,13 @@
 @import "header/top-bar";
 @import "header/logo";
 
+/* Footer
+--------------------------------------------- */
+
+@import "footer/content-bar";
+@import "footer/copyright-bar";
+@import "footer/main";
+
 /* Navigation
 --------------------------------------------- */
 @import "navigation/navigation";

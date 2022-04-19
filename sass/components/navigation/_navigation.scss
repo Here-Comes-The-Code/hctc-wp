@@ -28,7 +28,7 @@
 				font-size: var(--hctc-font-lg);
 				margin-bottom: var(--hctc-spacing-lg);
 				@include toggleMobileNav() {
-					margin-bottom: none;
+					margin-bottom: 0;
 					font-size: var(--hctc-font-md);
 					color: var(--hctc-header-nav-color);
 				}
@@ -47,6 +47,12 @@
 				color: var(--hctc-theme-color-1);
 				border: 1px solid transparent;
 			}
+		}
+	}
+
+	&--footer {
+		a {
+			line-height: $font__line-height-xl;
 		}
 	}
 }
