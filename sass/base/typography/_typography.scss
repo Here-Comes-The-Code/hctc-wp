@@ -12,3 +12,30 @@ textarea {
 
 @import "headings";
 @import "copy";
+
+@mixin addIcon(
+	$unicode,
+	$size: var(--hctc-font-md),
+	$top: 0,
+	$left: 0,
+	$position: relative
+) {
+	position: relative;
+	&::before {
+		left: $left;
+		top: $top;
+		position: $position;
+		content: "#{$unicode}";
+		margin: 0 var(--hctc-spacing-sm);
+		font-family: "Line Awesome Free";
+		font-weight: 900;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		line-height: 1;
+		font-size: $size;
+	}
+}
