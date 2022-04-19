@@ -183,3 +183,20 @@ require get_template_directory() . '/inc/customizer.php';
 if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+/* 
+	Add dashboard
+*/
+
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page(array(
+		'page_title' => 'Edycja treści motywu',
+		'menu_title' => 'Edycja treści',
+		'menu_slug' => 'hctc-options-main',
+		'capability' => 'edit_posts',
+		'redirect' => true,
+		'icon_url' => '
+		dashicons-nametag',
+		'position' => 2,
+	));
+}
