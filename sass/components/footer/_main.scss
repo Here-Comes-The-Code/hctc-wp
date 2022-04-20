@@ -1,5 +1,4 @@
 footer {
-  @include restrict-desktop-width;
   @include addBg("../assets/footer-bg.png");
 }
 

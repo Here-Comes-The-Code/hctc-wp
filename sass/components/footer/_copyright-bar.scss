@@ -1,13 +1,26 @@
 .c-footer {
   &__bottom {
+    backdrop-filter: blur(5px);
+    height: fit-content;
+    @include min-sm {
+      height: var(--hctc-footer-copyright-height);
+    }
+    background-color: var(--hctc-footer-color-bg-copyright);
+    @include restrict-desktop-width;
     text-align: center;
     padding: var(--hctc-spacing-md);
     color: var(--hctc-footer-text);
     font-size: var(--hctc-font-sm);
     position: relative;
+    @include flexLayout;
+    flex-wrap: wrap;
 
     .c-link.c-link--author {
-      position: absolute;
+      flex: 0 1 100%;
+      @include min-sm {
+        flex: unset;
+        position: absolute;
+      }
       right: var(--hctc-spacing-xxl);
     }
   }

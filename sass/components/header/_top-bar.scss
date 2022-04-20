@@ -10,7 +10,10 @@
   flex-wrap: wrap;
   width: 100%;
   height: fit-content;
+  flex-direction: column-reverse;
+
   @include min-md {
+    flex-direction: row;
     height: var(--hctc-header-top-bar-height);
   }
   background-color: var(--hctc-header-top-bar-color-bg);
@@ -23,6 +26,7 @@
   }
   &__data {
     @include max-md {
+      padding: var(--hctc-spacing-sm);
       flex: 0 1 100%;
       text-align: center;
       justify-content: center;

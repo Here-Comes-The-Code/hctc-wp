@@ -3,6 +3,7 @@
     padding: var(--hctc-spacing-md);
     @include min-xxl {
       padding: var(--hctc-spacing-xl) 0;
+      @include restrict-desktop-width;
     }
     min-height: 300px;
     display: grid;

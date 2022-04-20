@@ -21,6 +21,8 @@ $hctc-theme-variables: (
   // footer
   "footer-text": var(--hctc-theme-color-3),
   "footer-text-author": #444,
+  "footer-color-bg-copyright": transparentize(color(RED), 0.5),
+  "footer-copyright-height": 46px,
   // palette
   "theme-color-1": color(RED),
   "theme-color-2": color(BLACK),
