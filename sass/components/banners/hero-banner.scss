@@ -1,0 +1,61 @@
+$min-banner-height: 500px;
+$max-text-width: 600px;
+$banner-padding: var(--hctc-spacing-md);
+$banner-overlay: var(--hctc-spacing-xl);
+.c-hero-banner {
+  min-height: $min-banner-height;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  @include flexLayout(flex-end, flex-end);
+  &__txt {
+    width: 100%;
+    padding-top: var(--hctc-spacing-xxl);
+    padding-bottom: var(--hctc-spacing-xxl);
+    @include restrict-desktop-width;
+    @include min-md {
+      margin-bottom: var(--hctc-spacing-xxl);
+    }
+    &-title {
+      text-align: end;
+      @include pull(right);
+      max-width: $max-text-width;
+      @include bannerBorderRadius;
+      color: var(--hctc-banner-hero-txt-color);
+      background-color: var(--hctc-banner-hero-bg-color-1);
+      margin-bottom: 0;
+      padding: $banner-padding;
+      padding-bottom: $banner-overlay;
+      font-size: var(--hctc-banner-hero-txt-size-1);
+      line-height: $font__line-height-body;
+    }
+    &-subtitle {
+      font-size: var(--hctc-banner-hero-txt-size-2);
+      margin-top: calc(-1 * $banner-overlay);
+      @include pull(right);
+      text-align: end;
+      max-width: $max-text-width;
+      @include bannerBorderRadius;
+      position: relative;
+      margin-right: var(--hctc-spacing-xxl);
+      color: var(--hctc-banner-hero-txt-color);
+      background-color: var(--hctc-banner-hero-bg-color-2);
+      padding: $banner-padding;
+      line-height: $font__line-height-body;
+      @include underline(
+        double,
+        var(--hctc-theme-color-2),
+        var(--hctc-theme-color-1),
+        calc(-1 * var(--hctc-spacing-md)),
+        calc(-1 * var(--hctc-spacing-xl))
+      );
+      p {
+        margin: 0;
+        font-weight: 100;
+      }
+      strong {
+        font-weight: 900;
+      }
+    }
+  }
+}

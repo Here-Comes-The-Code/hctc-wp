@@ -37,6 +37,9 @@
     &:not(:last-child):not(:first-child) {
       margin: 0 var(--hctc-spacing-xl);
     }
+    @include onHover {
+      color: var(--hctc-header-top-bar-font-color);
+    }
     p {
       margin: 0;
     }

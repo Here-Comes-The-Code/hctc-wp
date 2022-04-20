@@ -30,6 +30,7 @@ $hctc-theme-variables: (
   // border-radius
   "border-radius-sm": 3px,
   "border-radius-md": 5px,
+  "border-radius-lg": 10px,
   // transition
   "box-shadow-gray-light-0": 0 0 0px 0 color(GRAY-LIGHT),
   "box-shadow-gray-light-1": 0 0 5px 0 color(GRAY-LIGHT),
@@ -68,7 +69,14 @@ $hctc-theme-variables: (
   // zindex
   "zindex-under": -1,
   "zindex-above-1": 10,
-  "zindex-above-2": 100
+  "zindex-above-2": 100,
+  // banners
+  // hero
+  "banner-hero-txt-size-1": var(--hctc-font-xl),
+  "banner-hero-txt-size-2": var(--hctc-font-lg),
+  "banner-hero-txt-color": var(--hctc-theme-color-3),
+  "banner-hero-bg-color-1": var(--hctc-theme-color-2),
+  "banner-hero-bg-color-2": var(--hctc-theme-color-1)
 );
 
 // expose variables

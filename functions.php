@@ -199,4 +199,15 @@ if (function_exists('acf_add_options_page')) {
 		dashicons-nametag',
 		'position' => 2,
 	));
+	acf_add_options_sub_page(array(
+		'page_title' => 'Ogólne',
+		'menu_title' => 'Ogólne',
+		'parent_slug' => 'hctc-options-main',
+	));
+	acf_add_options_sub_page(array(
+		'page_title' => 'Strona główna',
+		'menu_title' => 'Strona główna',
+		'parent_slug' => 'hctc-options-main',
+	));
+
 }
