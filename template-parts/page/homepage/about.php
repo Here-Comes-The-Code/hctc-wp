@@ -51,7 +51,3 @@ $images = $acf['media']['images'];
     </div>
   </div>
 </section>
-
-<div>
-  <?php var_dump($acf['media']['images']) ?>
-</div>
