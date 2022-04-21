@@ -57,22 +57,11 @@ button,
 	}
 }
 
-@mixin defaultLinkStyles {
-	text-decoration: unset;
-	color: inherit;
-	transition: var(--hctc-transition-global);
-	cursor: pointer;
-	text-decoration: unset;
-	display: inline-block;
-	@include onHover {
-		color: inherit;
-		transform: translateY(-1px);
-	}
-}
+
 
 // default anchor element styling
 a {
-	@include defaultLinkStyles;
+	
 }
 
 .c-link {
