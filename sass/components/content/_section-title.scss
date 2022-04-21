@@ -1,0 +1,16 @@
+.c-section-title {
+	&__sub {
+		@include underline;
+		text-transform: lowercase;
+		font-weight: 900;
+		color: color(RED);
+		font-size: var(--hctc-font-lg);
+	}
+	&__main {
+		font-size: var(--hctc-font-xxl);
+		font-weight: 900;
+		margin-top: var(--hctc-spacing-xs);
+		line-height: $font__line-height-title-section;
+		margin-bottom: var(--hctc-spacing-paragraph);
+	}
+}
