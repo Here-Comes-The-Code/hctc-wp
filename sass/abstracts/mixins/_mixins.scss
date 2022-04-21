@@ -51,6 +51,50 @@
 	}
 }
 
+@mixin addDecor($url, $size: contain, $repeat: no-repeat, $scale: 1) {
+	position: relative;
+	&::after {
+		width: 100%;
+		height: 100%;
+		content: " ";
+		left: -50%;
+		top: -50%;
+		transform: translate(50%, 50%) scale($scale);
+		content: " ";
+		position: absolute;
+		z-index: -2;
+		@if ($url) {
+			background-image: url($url);
+		}
+		background-position: center;
+		background-size: $size;
+		background-repeat: $repeat;
+	}
+}
+
+@mixin addTransparentRectangle(
+	$opacity: 0.5,
+	$height: 200px,
+	$width: 200px,
+	$left: 0,
+	$top: 0,
+	$bg-color: color(RED)
+) {
+	position: relative;
+	&::before {
+		width: $width;
+		height: $height;
+		content: " ";
+		left: $left;
+		top: $top;
+		background-color: transparentize($bg-color, $opacity);
+		transform: translate(50%, 50%);
+		content: " ";
+		position: absolute;
+		z-index: -1;
+	}
+}
+
 @mixin onHover {
 	&:hover,
 	&:focus,
