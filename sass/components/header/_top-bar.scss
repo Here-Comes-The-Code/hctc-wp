@@ -11,7 +11,8 @@
   width: 100%;
   height: fit-content;
   flex-direction: column-reverse;
-
+  padding-left: var(--hctc-spacing-xl);
+  padding-right: var(--hctc-spacing-xl);
   @include min-md {
     flex-direction: row;
     height: var(--hctc-header-top-bar-height);

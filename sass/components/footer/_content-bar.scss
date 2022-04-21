@@ -29,9 +29,14 @@
       a {
         line-height: $font__line-height-xl;
       }
+      a,
+      a > p {
+        font-weight: 600;
+      }
       p {
         margin: 0;
         display: block;
+        font-weight: 100;
 
         .c-footer--icon {
           left: calc(-2 * var(--hctc-spacing-xl));
