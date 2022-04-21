@@ -12,9 +12,17 @@ $banner-overlay: var(--hctc-spacing-xl);
     width: 100%;
     padding-top: var(--hctc-spacing-xxl);
     padding-bottom: var(--hctc-spacing-xxl);
+    padding-left: var(--hctc-spacing-xl);
     @include restrict-desktop-width;
     @include min-md {
       margin-bottom: var(--hctc-spacing-xxl);
+    }
+    padding-right: var(--hctc-spacing-xl);
+    transition: var(--hctc-transition-global);
+    &:hover,
+    &:focus,
+    &:active {
+      transform: translateY(1px);
     }
     &-title {
       text-align: end;
