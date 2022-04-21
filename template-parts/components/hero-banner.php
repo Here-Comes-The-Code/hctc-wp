@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package grzegorzczekala.pl_v2
+ * @package hctc
  */
 
 $acf = get_field($args['page'], 'options')['hero-banner'];
@@ -18,7 +18,7 @@ $acf = get_field($args['page'], 'options')['hero-banner'];
         </h1>
         <div class='c-hero-banner__txt-subtitle'>
             <?php echo $acf['subtitle']; ?>
-            
+
         </div>
     </div>
 </section>
