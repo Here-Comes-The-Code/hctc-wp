@@ -27,10 +27,10 @@ $color__background-ins: #fff9c0;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: inherit;
-$color__link-visited: inherit;
-$color__link-hover: inherit;
-$color__text-main: #404040;
+$color__link: var(--theme-color-1);
+$color__link-visited: darken(color(RED), 0.5);
+$color__link-hover: lighten(color(RED), 0.1);
+$color__text-main: color(BLACK);
 
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
