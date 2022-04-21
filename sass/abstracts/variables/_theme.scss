@@ -43,7 +43,8 @@ $hctc-theme-variables: (
   "font-md": 1rem,
   "font-lg": 1.25rem,
   "font-xl": 2rem,
-  "font-xxl": 3rem,
+  "font-xxl": 2.5rem,
+  "font-xxxl": 3rem,
   // letter spacing
   "letter-spacing-sm": 1px,
   // spacing
@@ -53,6 +54,8 @@ $hctc-theme-variables: (
   "spacing-lg": 1rem,
   "spacing-xl": 1.3rem,
   "spacing-xxl": 1.6rem,
+  "spacing-section": var(--hctc-spacing-xxl),
+  "spacing-paragraph": var(--hctc-spacing-lg),
   // buttons,
   "btn-font-weight": 600,
   // default
