@@ -7,10 +7,14 @@ get_header();
     <?php
     get_template_part(
       'template-parts/components/hero-banner',
-      null, 
+      null,
       array(
         'page' => 'homepage',
       )
+    ); ?>
+    <?php
+    get_template_part(
+      'template-parts/page/homepage/about',
     ); ?>
   </main>
 </div>

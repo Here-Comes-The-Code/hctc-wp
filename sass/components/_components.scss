@@ -18,6 +18,10 @@
 --------------------------------------------- */
 @import "content/posts-and-pages";
 
+/* Titles
+--------------------------------------------- */
+@import "content/section-title";
+
 /* Comments
 --------------------------------------------- */
 @import "comments/comments";
@@ -41,3 +45,7 @@
 /* Banners
 --------------------------------------------- */
 @import "banners/hero-banner";
+
+/* Banners
+--------------------------------------------- */
+@import "text-with-media/text-with-media";
