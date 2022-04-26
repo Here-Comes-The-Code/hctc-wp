@@ -1,11 +1,15 @@
-const gulp = require('gulp'),
-  sass = require('gulp-sass')(require('sass')),
-  autoprefixer = require('gulp-autoprefixer'),
-  cssnano = require('gulp-cssnano'),
-  sourcemaps = require('gulp-sourcemaps'),
-  uglify = require('gulp-uglify'),
-  concat = require('gulp-concat'),
-  babel = require('gulp-babel');
+const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('gulp-autoprefixer');
+const cssnano = require('gulp-cssnano');
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+
+const rollup = require('gulp-better-rollup');
+const babel = require('rollup-plugin-babel');
+const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
 
 const paths = {
   styles: {
@@ -44,9 +48,12 @@ function script() {
       .src(paths.script.src, { allowEmpty: true })
       // .pipe(header(banner, { package : package }))
       .pipe(
-        babel({
-          presets: ['@babel/env'],
-        })
+        rollup(
+          {
+            plugins: [babel(), resolve(), commonjs()],
+          },
+          'umd'
+        )
       )
       .pipe(uglify())
       .pipe(concat('script.js'))
