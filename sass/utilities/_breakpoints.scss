@@ -12,6 +12,13 @@
   }
 }
 
+@mixin max-width-restriction($property) {
+  @media only screen and (min-width: map.get($hctc-theme-variables, "layout-desktop-width")) {
+    #{$property}: calc(
+      (100vw - map.get($hctc-theme-variables, "layout-desktop-width")) / 2
+    );
+  }
+}
 @mixin restrict-desktop-width {
   @include padding-max-width;
 }
