@@ -1,10 +1,11 @@
-// eslint-disable-next-line no-undef
-// require('babel-register')({
-//   presets: ['env'],
-// });
+import { handleNav } from './nav';
+import { handleParallax } from './parallax';
 
 const init = () => {
   handleNav();
+  handleParallax();
 };
 
 init();
+
+

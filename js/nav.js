@@ -1,4 +1,4 @@
-function handleNav() {
+export function handleNav() {
   const mobileNavTrigger = document.querySelector('.js-mobile-nav-trigger');
   if (mobileNavTrigger) {
     const mobileNav = document.querySelector('.js-nav');
