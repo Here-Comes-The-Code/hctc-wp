@@ -157,3 +157,14 @@
 		var(--hctc-border-radius-lg)
 	);
 }
+
+@mixin responsiveFontSize($desktop, $mobile) {
+	@if ($mobile) {
+		font-size: var(--hctc-font-#{$mobile});
+		@include min-sm {
+			font-size: var(--hctc-font-#{$desktop});
+		}
+	} @else {
+		font-size: var(--hctc-font-#{$desktop});
+	}
+}
