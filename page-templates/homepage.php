@@ -16,6 +16,14 @@ get_header();
     get_template_part(
       'template-parts/page/homepage/about',
     ); ?>
+    <?php get_template_part(
+      'template-parts/components/separator',
+      null,
+      array(
+        'page' => 'homepage',
+        'id' => 'separator-1',
+      )
+    ); ?>
   </main>
 </div>
 <?php

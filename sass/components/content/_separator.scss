@@ -1,0 +1,66 @@
+$separator-txt-color-title: var(--hctc-theme-color-3);
+$separator-txt-color-link: var(--hctc-theme-color-2);
+$separator-min-height: 250px;
+$separator-text-margin-left: var(--hctc-spacing-md);
+.c-separator {
+	width: 100%;
+	@include flexLayout(space-between);
+	&__content {
+		// flex: 0 1 33%;
+		padding: 0 var(--hctc-spacing-md);
+		@include max-width-restriction(padding-left);
+		position: relative;
+		&-link {
+			margin-left: $separator-text-margin-left;
+			text-transform: lowercase;
+			font-weight: 900;
+			color: $separator-txt-color-link;
+
+			@include underline(
+				double,
+				$separator-txt-color-link,
+				$separator-txt-color-title
+			);
+			margin-bottom: var(--hctc-spacing-sm);
+			@include responsiveFontSize(lg, md);
+		}
+		&-title {
+			font-weight: 900;
+			margin: 0;
+			margin-left: $separator-text-margin-left;
+			color: $separator-txt-color-title;
+			@include responsiveFontSize(xxl, lg);
+		}
+	}
+	&__img {
+		position: relative;
+		@include flexLayout;
+		width: 50%;
+		@include min-md {
+			width: 60%;
+		}
+		overflow: hidden;
+		max-height: 250px;
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
+		> .simpleParallax {
+			width: 100%;
+		}
+		&::after {
+			left: 0;
+			top: 0;
+			position: absolute;
+			content: " ";
+			width: 100%;
+			height: 100%;
+			display: block;
+			z-index: 1;
+			clip-path: polygon(0 0, 3% 0, 53% 100%, 50% 100%);
+			background-color: var(--hctc-theme-color-3);
+		}
+
+		img {
+			min-width: 100%;
+			height: auto;
+		}
+	}
+}
