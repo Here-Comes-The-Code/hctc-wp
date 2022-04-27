@@ -10,11 +10,7 @@
 
 $acf_options = get_field($args['page'], 'options');
 $acf = $acf_options[$args['id']];
-// var_dump($acf);
-
 $bg_color = $acf['bg'];
-// var_dump($bg_color);
-
 ?>
 <div class='c-separator' <?php
                           if ($bg_color) {
