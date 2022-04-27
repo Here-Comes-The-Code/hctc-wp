@@ -57,7 +57,8 @@ $hctc-theme-variables: (
   "spacing-section": var(--hctc-spacing-xxl),
   "spacing-paragraph": var(--hctc-spacing-lg),
   // buttons,
-  "btn-font-weight": 600,
+  "btn-font-weight": 300,
+  "btn-text-transform": lowercase,
   // default
   "btn-default-bg-color": transparent,
   "btn-default-font-color": var(--hctc-theme-color-2),

@@ -20,6 +20,8 @@
 // 	}
 // }
 
+$min-btn-height: 50px;
+
 // default btn styles
 button,
 .c-btn {
@@ -36,6 +38,11 @@ button,
 	cursor: pointer;
 	font-size: var(--hctc-font-lg);
 	font-weight: var(--hctc-btn-font-weight);
+	@include flexLayout;
+	height: fit-content;
+	min-height: $min-btn-height;
+	text-transform: var(--hctc-btn-text-transform);
+	gap: var(--hctc-spacing-xs);
 	&:hover,
 	&:focus,
 	&:active {
@@ -57,11 +64,8 @@ button,
 	}
 }
 
-
-
 // default anchor element styling
 a {
-	
 }
 
 .c-link {
