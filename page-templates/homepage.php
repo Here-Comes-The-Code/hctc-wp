@@ -24,6 +24,14 @@ get_header();
         'id' => 'separator-1',
       )
     ); ?>
+    <?php get_template_part(
+      'template-parts/components/cta-bar',
+      null,
+      array(
+        'page' => 'homepage',
+        'id' => 'cta-1',
+      )
+    ); ?>
   </main>
 </div>
 <?php

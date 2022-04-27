@@ -1,0 +1,33 @@
+.c-cta-bar {
+	padding: var(--hctc-spacing-md) var(--hctc-spacing-lg);
+	@include restrict-desktop-width;
+	gap: var(--hctc-spacing-md);
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	margin: var(--hctc-spacing-xl);
+	@include min-sm {
+		grid-template-columns: 0.7fr 0.3fr;
+	}
+
+	&__content {
+		margin-left: var(--hctc-spacing-xl);
+		@include addSquareDecor(color(RED), 0.5, -5%, unset, 60px, 60%);
+		display: flex;
+		align-items: center;
+		p {
+			font-size: var(--hctc-font-lg);
+			margin: 0;
+		}
+		strong {
+			font-weight: 900;
+		}
+	}
+	&__btns {
+		@include flexLayout(space-evenly, center);
+		@include min-sm {
+			justify-content: flex-end;
+		}
+		gap: var(--hctc-spacing-md);
+	}
+}
