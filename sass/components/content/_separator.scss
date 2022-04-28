@@ -1,6 +1,6 @@
 $separator-txt-color-title: var(--hctc-theme-color-3);
 $separator-txt-color-link: var(--hctc-theme-color-2);
-$separator-min-height: 250px;
+$separator-min-height: 200px;
 $separator-text-margin-left: var(--hctc-spacing-xl);
 .c-separator {
 	width: 100%;
@@ -40,7 +40,7 @@ $separator-text-margin-left: var(--hctc-spacing-xl);
 			width: 60%;
 		}
 		overflow: hidden;
-		max-height: 250px;
+		max-height: $separator-min-height;
 		clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
 		background-color: var(--hctc-theme-color-3);
 		> .simpleParallax {
