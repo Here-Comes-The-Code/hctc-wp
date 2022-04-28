@@ -25,6 +25,9 @@ $hctc-theme-variables: (
   "footer-copyright-height": 46px,
   // palette
   "theme-color-1": color(RED),
+  "theme-color-1-transparent-3": transparentize(color(RED), 0.75),
+  "theme-color-1-transparent-2": transparentize(color(RED), 0.5),
+  "theme-color-1-transparent-1": transparentize(color(RED), 0.25),
   "theme-color-2": color(BLACK),
   "theme-color-3": color(WHITE),
   // border-radius
