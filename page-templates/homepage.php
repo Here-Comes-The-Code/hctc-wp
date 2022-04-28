@@ -32,6 +32,10 @@ get_header();
         'id' => 'cta-1',
       )
     ); ?>
+    <?php
+    get_template_part(
+      'template-parts/page/homepage/portfolio-gallery',
+    ); ?>
   </main>
 </div>
 <?php
