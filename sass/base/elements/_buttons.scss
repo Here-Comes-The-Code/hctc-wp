@@ -43,6 +43,8 @@ button,
 	min-height: $min-btn-height;
 	text-transform: var(--hctc-btn-text-transform);
 	gap: var(--hctc-spacing-xs);
+	// icon first
+	flex-direction: row-reverse;
 	&:hover,
 	&:focus,
 	&:active {
