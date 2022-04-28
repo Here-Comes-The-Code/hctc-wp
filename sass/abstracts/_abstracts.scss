@@ -1,7 +1,11 @@
+/* variables */
 @import "variables/colors";
 @import "variables/typography";
 @import "variables/structure";
 @import "variables/columns";
 @import "variables/theme";
+/* mixins */
 @import "mixins/mixins";
 @import "mixins/layout";
+/* animations */
+@import "animations/main";

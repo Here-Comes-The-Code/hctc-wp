@@ -1,0 +1,32 @@
+@mixin animated($duration: 0.3s, $fill-mode: both) {
+  animation-fill-mode: $fill-mode;
+  animation-duration: $duration;
+}
+
+@mixin animation(
+  $name: "",
+  $iteration: infinite,
+  $duration: 2s,
+  $direction: alternate,
+  $play-state: running
+) {
+  animation-name: $name;
+  animation-iteration-count: $iteration;
+  animation-duration: $duration;
+  animation-direction: $direction;
+  animation-play-state: $play-state;
+}
+
+@keyframes move-img {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.01);
+  }
+}
+.animation-move-img {
+  @include animated;
+  @include animation(move-img);
+}
