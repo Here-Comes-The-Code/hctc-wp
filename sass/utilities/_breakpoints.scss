@@ -1,22 +1,20 @@
 @use "sass:map";
 
+$max-width-full: calc(
+  100vw - map.get($hctc-theme-variables, "layout-desktop-width")
+);
+$max-width-side: calc($max-width-full / 2);
 // max-width-container
 @mixin padding-max-width {
   @media only screen and (min-width: map.get($hctc-theme-variables, "layout-desktop-width")) {
-    padding-left: calc(
-      (100vw - map.get($hctc-theme-variables, "layout-desktop-width")) / 2
-    );
-    padding-right: calc(
-      (100vw - map.get($hctc-theme-variables, "layout-desktop-width")) / 2
-    );
+    padding-left: $max-width-side;
+    padding-right: $max-width-side;
   }
 }
 
 @mixin max-width-restriction($property) {
   @media only screen and (min-width: map.get($hctc-theme-variables, "layout-desktop-width")) {
-    #{$property}: calc(
-      (100vw - map.get($hctc-theme-variables, "layout-desktop-width")) / 2
-    );
+    #{$property}: $max-width-side;
   }
 }
 @mixin restrict-desktop-width {
