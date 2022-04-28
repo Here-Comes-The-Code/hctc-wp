@@ -1,7 +1,10 @@
 .c-cta-bar {
 	padding: var(--hctc-spacing-md) var(--hctc-spacing-lg);
 	@include restrict-desktop-width;
-	gap: var(--hctc-spacing-md);
+	gap: var(--hctc-spacing-xxl);
+	@include min-md { 
+		gap: var(--hctc-spacing-md);
+	 }
 	display: grid;
 	grid-template-columns: 1fr;
 	align-items: center;
