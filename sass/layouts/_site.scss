@@ -16,6 +16,13 @@
 }
 
 .l-section {
+  &--restrict-width {
+    @include restrict-desktop-width;
+  }
+  &--content-wrapper-fw {
+    padding-top: var(--hctc-spacing-section);
+    padding-bottom: var(--hctc-spacing-section);
+  }
   &--content-wrapper {
     @include restrict-desktop-width;
     padding-top: var(--hctc-spacing-section);
