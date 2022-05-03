@@ -38,16 +38,16 @@ $images = $acf['media']['images'];
           'title' => $acf['title'],
         )
       ); ?>
-      <!-- wysiwyg -->
-      <div class='c-text-with-media__txt-paragraph c-text-with-media__txt-paragraph--accent'>
-        <?php echo $acf['text-accent'] ?>
-      </div>
-      <div class='c-text-with-media__txt-paragraph '>
-        <?php echo $acf['text-normal'] ?>
-      </div>
-      <a class="c-text-with-media__txt-link" href='<?php echo $acf['read-more']['url'] ?>' target='<?php echo $acf['read-more']['target'] ?>'>
-        <?php echo $acf['read-more']['title'] ?>
-      </a>
+      <?php
+      get_template_part(
+        'template-parts/components/section-text',
+        null,
+        array(
+          'text-accent' => $acf['text-accent'],
+          'text-normal' => $acf['text-normal'],
+          'read-more' => $acf['read-more'],
+        )
+      ); ?>
     </div>
   </div>
 </section>
