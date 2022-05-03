@@ -12,11 +12,13 @@ $acf_options = get_field($args['page'], 'options');
 $acf = $acf_options[$args['id']];
 $bg_color = $acf['bg'];
 ?>
-<div class='c-separator' <?php
-                          if ($bg_color) {
-                            echo 'style="background-color: rgba(' . $bg_color['red'] . ',' .  $bg_color['green'] . ',' . $bg_color['blue'] . ',' . $bg_color['alpha'] . ')"';
-                          };
-                          ?>>
+<div class='c-separator <?php if ($args['type'] == 'reversed') {
+                          echo 'c-separator--reversed';
+                        } ?>' <?php
+                            if ($bg_color) {
+                              echo 'style="background-color: rgba(' . $bg_color['red'] . ',' .  $bg_color['green'] . ',' . $bg_color['blue'] . ',' . $bg_color['alpha'] . ')"';
+                            };
+                            ?>>
   <div class='c-separator__content'>
     <a class="c-separator__content-link" href='<?php echo $acf['url']['url'] ?>' target='<?php echo $acf['url']['target'] ?>'>
       <?php echo $acf['url']['title'] ?>
