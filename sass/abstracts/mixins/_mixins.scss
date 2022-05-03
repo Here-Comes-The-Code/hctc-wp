@@ -17,7 +17,8 @@
 	$mainColor: var(--hctc-theme-color-2),
 	$altColor: var(--hctc-theme-color-1),
 	$marginTop: -2px,
-	$marginBottom: -7px
+	$marginBottom: -7px,
+	$vertical: bottom
 ) {
 	position: relative;
 	&::before,
@@ -29,9 +30,9 @@
 		transition: var(--hctc-transition-global);
 	}
 	&::before {
-		transform: translateX(-5%);
+		transform: translateX(-0%);
 		left: 0;
-		bottom: $marginTop;
+		#{$vertical}: $marginTop;
 		background-color: $mainColor;
 	}
 	&:hover,
@@ -43,9 +44,9 @@
 	}
 	@if ($underlineType != single) {
 		&::after {
-			transform: translateX(5%);
+			transform: translateX(-5%);
 			left: 0;
-			bottom: $marginBottom;
+			#{$vertical}: $marginBottom;
 			background-color: $altColor;
 		}
 	}
@@ -206,9 +207,11 @@
 	$marginTop: -2px,
 	$marginBottom: -10px
 ) {
+	overflow-x: clip;
 	position: relative;
 	&::before,
 	&::after {
+		// overflow: hidden;
 		content: " ";
 		position: absolute;
 		width: 100%;
