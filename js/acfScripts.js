@@ -8,7 +8,7 @@ export function handleAcfAdmin() {
   }
 }
 
-const setAccordionName = (field) => {
+const setAccordionName = () => {
   const appliableAccordions = document.querySelectorAll(
     '.acf-field-accordion .acf-field[data-name="title"]'
   );
