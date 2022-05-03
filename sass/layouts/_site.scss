@@ -16,6 +16,9 @@
 }
 
 .l-section {
+  &--reverse {
+    flex-direction: row-reverse;
+  }
   &--restrict-width {
     @include restrict-desktop-width;
   }
@@ -34,6 +37,11 @@
     grid-template-columns: 1fr;
     &--two {
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    &--one-third {
+      @include min-md {
+        grid-template-columns: minmax(200px, 0.4fr) minmax(200px, 0.6fr);
+      }
     }
     &--two-third {
       @include min-md {
