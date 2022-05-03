@@ -36,6 +36,27 @@ get_header();
     get_template_part(
       'template-parts/page/homepage/portfolio-gallery',
     ); ?>
+    <?php
+    get_template_part(
+      'template-parts/page/homepage/portfolio-done',
+    ); ?>
+    <?php get_template_part(
+      'template-parts/components/separator',
+      null,
+      array(
+        'page' => 'homepage',
+        'id' => 'separator-2',
+        'type' => 'reversed',
+      )
+    ); ?>
+    <?php get_template_part(
+      'template-parts/components/cta-bar',
+      null,
+      array(
+        'page' => 'homepage',
+        'id' => 'cta-1',
+      )
+    ); ?>
   </main>
 </div>
 <?php
