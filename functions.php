@@ -209,5 +209,18 @@ if (function_exists('acf_add_options_page')) {
 		'menu_title' => 'Strona główna',
 		'parent_slug' => 'hctc-options-main',
 	));
-
+	acf_add_options_sub_page(array(
+		'page_title' => 'Projekty / Referencje',
+		'menu_title' => 'Projekty / Referencje',
+		'parent_slug' => 'hctc-options-main',
+	));
 }
+
+// // add script.js to admin panel
+
+function acf_script($hook)
+{
+	wp_enqueue_script('hctc-custom-admin-js', get_template_directory_uri() . '/dist/script.js', array(), [], true);
+}
+
+add_action('admin_enqueue_scripts', 'acf_script');
