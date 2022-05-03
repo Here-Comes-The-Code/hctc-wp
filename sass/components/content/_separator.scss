@@ -5,8 +5,21 @@ $separator-text-margin-left: var(--hctc-spacing-xl);
 .c-separator {
 	width: 100%;
 	@include flexLayout(space-between);
+	&--reversed {
+		flex-direction: row-reverse;
+		.c-separator__content {
+			@include max-width-restriction(padding-right);
+			padding-left: unset;
+		}
+		.c-separator__img {
+			clip-path: polygon(0 0, 75% 0%, 100% 100%, 0% 100%);
+			&::after {
+				right: 0;
+				clip-path: polygon(72% 0%, 75% 0, 100% 100%, 97% 100%);
+			}
+		}
+	}
 	&__content {
-		// flex: 0 1 33%;
 		padding: 0 var(--hctc-spacing-md);
 		@include max-width-restriction(padding-left);
 		position: relative;
@@ -41,7 +54,7 @@ $separator-text-margin-left: var(--hctc-spacing-xl);
 		}
 		overflow: hidden;
 		max-height: $separator-min-height;
-		clip-path: polygon(0 0, 100% 0%, 100% 100%, 50% 100%);
+		clip-path: polygon(0 0, 100% 0%, 100% 100%, 25% 100%);
 		background-color: var(--hctc-theme-color-3);
 		> .simpleParallax {
 			width: 100%;
@@ -56,7 +69,7 @@ $separator-text-margin-left: var(--hctc-spacing-xl);
 			height: 101%;
 			display: block;
 			z-index: 1;
-			clip-path: polygon(0 1%, 3% 0, 53% 100%, 50% 100%);
+			clip-path: polygon(0 1%, 3% 0, 28% 100%, 25% 100%);
 			background-color: var(--hctc-theme-color-3);
 		}
 
