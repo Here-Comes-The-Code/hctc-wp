@@ -18,8 +18,10 @@ const setAccordionName = () => {
       acc
         .closest('.acf-field-accordion')
         .querySelector('.acf-accordion-title label').innerText = `${
-        acc.querySelector('input').value
-      } - ${
+        acc.parentElement.querySelector('input[type="checkbox"]').checked
+          ? '[x] '
+          : ''
+      }${acc.querySelector('input').value} - ${
         acc.parentElement.querySelector('[data-name="subtitle"] input').value
       }`;
     });
