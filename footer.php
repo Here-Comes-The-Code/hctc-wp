@@ -16,14 +16,6 @@ $year = date('Y');
 <footer id="colophon" class="site-footer l-site__footer">
 
 	<div class='c-footer__content'>
-		<div class='c-footer__content-col'>
-			<p class='c-footer--icon-info'>
-				<strong>
-					<?php echo $acf['company-name'] ?>
-				</strong>
-			</p>
-			<p><?php echo $acf['name'] ?></p>
-		</div>
 		<div class='c-footer__content-col c-nav--footer'>
 			<?php
 			wp_nav_menu(array(
@@ -33,6 +25,14 @@ $year = date('Y');
 				'menu_class' 	 => 'c-nav__menu--footer c-footer--icon-sitemap'
 			));
 			?>
+		</div>
+		<div class='c-footer__content-col'>
+			<p class='c-footer--icon-info'>
+				<strong>
+					<?php echo $acf['company-name'] ?>
+				</strong>
+			</p>
+			<p><?php echo $acf['name'] ?></p>
 		</div>
 		<div class='c-footer__content-col'>
 			<!-- expect wysiwyg, no html -->
