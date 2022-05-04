@@ -1,0 +1,59 @@
+.c-achievements {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--hctc-spacing-xxl);
+  align-items: center;
+  justify-items: center;
+  padding: var(--hctc-spacing-paragraph);
+  @include min-md {
+    grid-template-columns: 0.6fr 1fr 0.6fr;
+  }
+  &__decor {
+    transform: scale(1.2);
+  }
+  &__col {
+    @include flexLayout;
+    gap: var(--hctc-spacing-xxl);
+    @include min-md {
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+  }
+  &__item {
+    text-align: center;
+    &-number {
+      font-size: var(--hctc-font-xl);
+      margin: 0;
+      font-weight: 900;
+      color: var(--hctc-theme-color-1);
+    }
+    &-txt {
+      max-width: 24ch;
+      font-size: var(--hctc-font-md);
+      margin: 0;
+      font-weight: 100;
+    }
+    &--top {
+      $middle-item-spacing: calc(-1 * var(--hctc-spacing-xxl));
+      &:nth-child(2) {
+        transform: translateY($middle-item-spacing);
+        @include min-md {
+          transform: translateX($middle-item-spacing);
+        }
+      }
+    }
+    &--bottom {
+      $middle-item-spacing: calc(1 * var(--hctc-spacing-xxl));
+      &:nth-child(2) {
+        transform: translateY($middle-item-spacing);
+        @include min-md {
+          transform: translateX($middle-item-spacing);
+        }
+      }
+    }
+  }
+  &__media {
+    @include addTransparentRectangle(0.5, 260px, 60%);
+    @include flexLayout;
+  }
+}

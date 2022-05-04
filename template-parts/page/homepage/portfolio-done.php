@@ -12,6 +12,7 @@ $acf = get_field('homepage', 'options')['portfolio-done'];
 $acf_projects = get_field('portfolio-1', 'options');
 $decor = $acf['media']['decor'];
 $images = $acf['media']['images'];
+$max_projects_count = 4;
 ?>
 
 <section class="l-section--content-wrapper ">
@@ -39,9 +40,12 @@ $images = $acf['media']['images'];
       ); ?>
     </div>
     <div class='c-text-with-media__imgs'>
-      <?php if ($acf_projects) : ?>
+      <?php
+      $counter = 1;
+      if ($acf_projects) : ?>
         <?php foreach ($acf_projects as $project) : ?>
-          <?php if ($project['selected']) : ?>
+          <?php if ($project['selected'] && $counter <= $max_projects_count) : ?>
+            <?php $counter++; ?>
             <div class='c-text-with-media__imgs-wrapper'>
               <?php
               $image = $project['media'];

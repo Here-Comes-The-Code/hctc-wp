@@ -1,5 +1,5 @@
 $section-assets-min-height: 300px;
-
+$media-max-height: 200px;
 @mixin scaleUp($scale: 1.1) {
   transition: var(--hctc-transition-global);
   &:hover,
@@ -10,6 +10,47 @@ $section-assets-min-height: 300px;
 }
 .c-text-with-media {
   padding: var(--hctc-spacing-paragraph);
+  &__refs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--hctc-spacing-xxl);
+    &-wrapper {
+      position: relative;
+      padding: var(--hctc-spacing-paragraph);
+      text-align: center;
+      @include min-md {
+        text-align: start;
+      }
+      &::after {
+        position: absolute;
+        content: '"';
+        left: var(--hctc-spacing-sm);
+        @include min-md {
+          left: 0;
+        }
+        top: calc(-1 * var(--hctc-spacing-md));
+        font-size: var(--hctc-font-xxl);
+        color: var(--hctc-theme-color-1);
+      }
+    }
+    &-txt {
+      p {
+        margin: 0;
+        font-weight: 100;
+      }
+      margin-bottom: var(--hctc-spacing-paragraph);
+    }
+    &-title {
+      margin: 0;
+    }
+    &-subtitle {
+      font-size: var(--hctc-font-sm);
+      margin: 0;
+    }
+  }
+  &__media {
+    max-height: $media-max-height;
+  }
   &__txt {
     @include flexLayout(flex-start, flex-start, column);
     &-paragraph {
