@@ -1,0 +1,28 @@
+.c-row-data {
+  display: grid;
+  gap: var(--hctc-spacing-lg);
+  &__item {
+    @include flexLayout;
+    justify-content: flex-start;
+    gap: var(--hctc-spacing-lg);
+    font-size: var(--hctc-font-lg);
+    font-weight: 100;
+    @include onHover {
+      i, span {
+        color: var(--hctc-theme-color-1);
+      }
+    }
+    &--accent {
+      font-weight: 900;
+      color: var(--hctc-theme-color-1);
+    }
+    i {
+      transition: var(--hctc-transition-global);
+      font-size: var(--hctc-font-xl);
+      font-weight: 900;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
