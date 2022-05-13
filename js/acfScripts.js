@@ -1,3 +1,5 @@
+import { stripHTML } from './utils';
+
 export function handleAcfAdmin() {
   const isAdminActive = document.body.classList.contains('wp-admin');
 
@@ -15,15 +17,29 @@ const setAccordionName = () => {
   const canApply = appliableAccordions.length > 0;
   if (canApply) {
     appliableAccordions.forEach((acc) => {
-      acc
+      const title = acc
         .closest('.acf-field-accordion')
-        .querySelector('.acf-accordion-title label').innerText = `${
-        acc.parentElement.querySelector('input[type="checkbox"]').checked
-          ? '[x] '
-          : ''
-      }${acc.querySelector('input').value} - ${
-        acc.parentElement.querySelector('[data-name="subtitle"] input').value
-      }`;
+        .querySelector('.acf-accordion-title label');
+      if (title) {
+        const checkbox = acc.parentElement.querySelector(
+          'input[type="checkbox"]'
+        );
+        const inputTitle = acc.classList.contains('acf-field-wysiwyg')
+          ? acc.querySelector('textarea')
+            ? acc.querySelector('textarea').innerText
+            : ''
+          : acc.querySelector('input')
+          ? acc.querySelector('input').value
+          : '';
+        const inputSubtitle = acc.parentElement.querySelector(
+          '[data-name="subtitle"] input'
+        );
+        title.innerText = `${
+          checkbox && checkbox.checked ? '[x] ' : ''
+        }${stripHTML(inputTitle)}${
+          inputSubtitle && inputSubtitle.value ? ` - ${inputSubtitle.value}` : ''
+        }`;
+      }
     });
   }
 };
