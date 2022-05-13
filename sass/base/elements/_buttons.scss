@@ -64,6 +64,16 @@ button,
 			border: 1px solid var(--hctc-btn-primary-border-color-active);
 		}
 	}
+	&--secondary {
+		background-color: var(--hctc-btn-secondary-bg-color);
+		color: var(--hctc-btn-secondary-font-color);
+		border: 1px solid var(--hctc-btn-secondary-border-color);
+		@include onHover {
+			background-color: var(--hctc-btn-secondary-bg-color-active);
+			color: var(--hctc-btn-secondary-font-color-active);
+			border: 1px solid var(--hctc-btn-secondary-border-color-active);
+		}
+	}
 }
 
 // default anchor element styling

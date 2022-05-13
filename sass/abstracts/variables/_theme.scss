@@ -73,17 +73,26 @@ $hctc-theme-variables: (
   "btn-primary-bg-color-active": var(--hctc-theme-color-1),
   "btn-primary-font-color-active": var(--hctc-theme-color-3),
   "btn-primary-border-color-active": var(--hctc-theme-color-1),
+  // primary
+  "btn-secondary-bg-color": var(--hctc-theme-color-3),
+  "btn-secondary-font-color": var(--hctc-theme-color-1),
+  "btn-secondary-border-color": var(--hctc-theme-color-3),
+  "btn-secondary-bg-color-active": var(--hctc-theme-color-3),
+  "btn-secondary-font-color-active": var(--hctc-theme-color-2),
+  "btn-secondary-border-color-active": var(--hctc-theme-color-3),
   // zindex
   "zindex-under": -1,
   "zindex-above-1": 10,
   "zindex-above-2": 100,
   // banners
   // hero
-  "banner-hero-txt-size-1": var(--hctc-font-xl),
+  "banner-hero-txt-size-1": var(--hctc-font-xxl),
   "banner-hero-txt-size-2": var(--hctc-font-lg),
   "banner-hero-txt-color": var(--hctc-theme-color-3),
   "banner-hero-bg-color-1": var(--hctc-theme-color-2),
-  "banner-hero-bg-color-2": var(--hctc-theme-color-1)
+  "banner-hero-bg-color-2": var(--hctc-theme-color-1),
+  // form
+  "form-label-txt-size": var(--hctc-font-sm)
 );
 
 // expose variables
