@@ -1,4 +1,6 @@
 .c-achievements {
+  height: fit-content;
+  overflow: hidden;
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--hctc-spacing-xxl);
@@ -43,7 +45,7 @@
       }
     }
     &--bottom {
-      $middle-item-spacing: calc(1 * var(--hctc-spacing-xxl));
+      $middle-item-spacing: calc(-1 * var(--hctc-spacing-xxl));
       &:nth-child(2) {
         transform: translateY($middle-item-spacing);
         @include min-md {
