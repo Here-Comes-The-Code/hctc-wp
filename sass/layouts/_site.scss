@@ -27,6 +27,8 @@
     padding-bottom: var(--hctc-spacing-section);
   }
   &--content-wrapper {
+    padding-left: var(--hctc-spacing-section);
+    padding-right: var(--hctc-spacing-section);
     @include restrict-desktop-width;
     padding-top: var(--hctc-spacing-section);
     padding-bottom: var(--hctc-spacing-section);
