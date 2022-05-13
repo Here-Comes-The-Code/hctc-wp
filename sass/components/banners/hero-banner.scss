@@ -1,5 +1,7 @@
 $min-banner-height: 500px;
+$min-banner-alt-height: 300px;
 $max-text-width: 600px;
+$max-text-alt-width: 300px;
 $banner-padding: var(--hctc-spacing-md);
 $banner-overlay: var(--hctc-spacing-xl);
 .c-hero-banner {
@@ -8,6 +10,7 @@ $banner-overlay: var(--hctc-spacing-xl);
   background-size: cover;
   position: relative;
   @include flexLayout(flex-end, flex-end);
+
   &__txt {
     width: 100%;
     padding-top: var(--hctc-spacing-xxl);
@@ -64,6 +67,18 @@ $banner-overlay: var(--hctc-spacing-xl);
       strong {
         font-weight: 900;
       }
+    }
+  }
+}
+
+.c-hero-banner--alt {
+  min-height: $min-banner-alt-height;
+  .c-hero-banner__txt {
+    &-title {
+      max-width: $max-text-alt-width;
+    }
+    &-subtitle {
+      max-width: $max-text-alt-width;
     }
   }
 }

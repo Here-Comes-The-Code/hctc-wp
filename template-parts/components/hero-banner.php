@@ -9,9 +9,14 @@
  */
 
 $acf = get_field($args['page'], 'options')['hero-banner'];
+if ($args['variant'] === 'alt') {
+    $variant = 'c-hero-banner--alt';
+};
 ?>
 
-<section class='c-hero-banner' style='background-image: url(<?php echo $acf['bg'] ?>)'>
+<section class='c-hero-banner <?php if ($variant) {
+                                    echo $variant;
+                                } ?>' style='background-image: url(<?php echo $acf['bg'] ?>)'>
     <div class='c-hero-banner__txt'>
         <h1 class='c-hero-banner__txt-title'>
             <?php echo $acf['title']; ?>
