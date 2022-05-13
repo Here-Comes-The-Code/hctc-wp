@@ -93,6 +93,7 @@ $media-max-height: 200px;
       &:nth-child(2n + 1) {
         @include min-lg {
           align-items: flex-end;
+          text-align: end;
           transform: translateY(calc(-1.5 * var(--hctc-spacing-xxl)));
         }
       }
@@ -130,20 +131,14 @@ $media-max-height: 200px;
   &__assets {
     overflow: hidden;
     min-height: $section-assets-min-height;
-    @include addTransparentRectangle(0.5, 300px, 50%);
+    @include addTransparentRectangle(0.8, 200px, 300px);
     &-grid {
       display: grid;
-      grid-template-columns: 0.3fr 0.6fr;
-      grid-template-rows: 1fr 1fr;
+
       justify-content: center;
       align-items: center;
       gap: var(--hctc-spacing-xl);
-      img:first-child {
-        overflow: hidden;
-        grid-column-start: 1;
-        grid-column-end: 3;
-        margin-left: calc(3 * var(--hctc-spacing-xxl));
-      }
+
       img {
         @include scaleUp(1.01);
       }
@@ -154,5 +149,10 @@ $media-max-height: 200px;
     height: auto;
     position: absolute;
     z-index: var(--hctc-zindex-under);
+    //
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
   }
 }
