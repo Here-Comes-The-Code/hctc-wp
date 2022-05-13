@@ -26,7 +26,8 @@ $triangle-width: 50px;
   &__items {
     padding-top: var(--hctc-spacing-xxl);
     padding-bottom: var(--hctc-spacing-xxl);
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--hctc-spacing-xxl);
     grid-template-columns: 1fr;
     align-content: center;
@@ -35,7 +36,7 @@ $triangle-width: 50px;
     justify-items: center;
     overflow: hidden;
     @include min-sm {
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      // grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     }
   }
   &__item {
