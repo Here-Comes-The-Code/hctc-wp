@@ -1,0 +1,134 @@
+.c-form-contact {
+  background-color: var(--hctc-theme-color-1);
+  padding: var(--hctc-spacing-section);
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--hctc-spacing-section);
+  &__decor {
+    position: absolute;
+    transform: scale(1.1) translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+    opacity: 0.3;
+  }
+  &__img {
+    position: relative;
+    @include flexLayout;
+    overflow: hidden;
+    img {
+      position: absolute;
+      min-width: 100%;
+      width: auto;
+      height: 100%;
+      max-width: unset;
+    }
+  }
+  /* ninja forms styling */
+  $warning-bg-color: var(--hctc-theme-color-3);
+  $input-label-color: var(--hctc-theme-color-3);
+  $input-bg-color: transparent;
+  $input-border-color: var(--hctc-theme-color-3);
+  $input-text-color: var(--hctc-theme-color-3);
+  $input-font-weight: 100;
+  //
+  $label-text-size: var(--hctc-form-label-txt-size);
+  $label-font-weight: 900;
+  $label-text-transform: uppercase;
+  /* required label & symbol */
+  .nf-response-msg p,
+  .nf-form-fields-required,
+  .nf-input-limit,
+  .ninja-forms-req-symbol {
+    color: $input-text-color;
+    font-weight: $label-font-weight;
+    font-size: $label-text-size;
+    text-transform: $label-text-transform;
+  }
+  /* input */
+  .nf-form-content,
+  .nf-after-form-content {
+    // error
+    .nf-error {
+      .nf-field-element {
+        .ninja-forms-field {
+          border-color: $input-border-color !important;
+        }
+        &::after {
+          background-color: $input-text-color;
+          color: var(--hctc-theme-color-1);
+        }
+      }
+    }
+    .nf-error-wrap,
+    .nf-error-msg {
+      &:not(:empty) {
+        background-color: $warning-bg-color;
+        text-align: center;
+        padding: var(--hctc-spacing-xs);
+        font-weight: $label-font-weight;
+        font-size: $label-text-size;
+        text-transform: $label-text-transform;
+      }
+    }
+    // input default
+    .list-select-wrap .nf-field-element > div,
+    input:not([type="button"]),
+    textarea {
+      background-color: $input-bg-color;
+      border: 0;
+      border-bottom: 2px solid $input-border-color;
+      color: $input-text-color;
+      &::placeholder {
+        color: $input-text-color;
+        font-weight: $input-font-weight;
+        font-style: italic;
+      }
+      // input focus
+      &:focus {
+        color: $input-text-color;
+        letter-spacing: 0.2px;
+        border-color: $input-border-color;
+        background-color: $input-bg-color;
+      }
+    }
+    textarea {
+      resize: vertical;
+      border: 2px solid $input-border-color;
+    }
+  }
+
+  /* label */
+  .nf-form-content {
+    .label-below {
+      .nf-field-label {
+        margin-top: 0;
+        text-transform: $label-text-transform;
+        font-weight: $label-font-weight;
+        label {
+          font-size: $label-text-size;
+          color: var(--hctc-theme-color-3);
+        }
+      }
+    }
+  }
+
+  /* button */
+  .nf-form-content {
+    button,
+    input[type="button"],
+    input[type="submit"] {
+      margin-left: auto;
+      font-family: $font__main;
+      @extend .c-btn;
+      @extend .c-btn--secondary;
+      &:disabled {
+        opacity: 0.1;
+        filter: grayscale(1);
+        cursor: not-allowed;
+      }
+      @include addIcon("\f0e0", var(--hctc-font-xl));
+    }
+  }
+}
