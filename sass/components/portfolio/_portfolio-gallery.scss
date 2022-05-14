@@ -5,6 +5,88 @@ $triangle-width: 50px;
 
 .c-portfolio-gallery {
   position: relative;
+  /* variant - vertical */
+  &--vertical {
+    $max-img-height: 250px;
+    .c-portfolio-gallery__items {
+      display: grid;
+      position: relative;
+      &::after {
+        content: " ";
+        height: 100%;
+        width: 2px;
+        transform: translateX(50%);
+        left: 50%;
+        top: 0;
+        background-color: var(--hctc-theme-color-1);
+      }
+      .c-portfolio-gallery__item {
+        max-height: unset;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--hctc-spacing-xxl);
+        align-items: center;
+        transform: unset;
+        &:nth-child(2n) {
+          direction: rtl;
+        }
+        .c-portfolio-gallery__item-img {
+          max-height: $max-img-height;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          img {
+            min-width: 100%;
+          }
+        }
+        .c-portfolio-gallery__item-txt {
+          text-align: center;
+          position: relative;
+          background-color: unset;
+          top: unset;
+          left: unset;
+          right: unset;
+          bottom: unset;
+          min-width: unset;
+          * {
+            color: var(--hctc-theme-color-2);
+          }
+          strong {
+            color: var(--hctc-theme-color-1);
+            font-weight: 900;
+          }
+          &::after {
+            background-color: unset;
+          }
+        }
+        .c-portfolio-gallery__item-title {
+          font-size: var(--hctc-font-lg);
+          @include underline;
+          width: fit-content;
+          margin: 0 auto;
+          margin-bottom: var(--hctc-spacing-xl);
+          * {
+            font-weight: 900;
+            margin: 0;
+            margin-bottom: var(--hctc-spacing-md);
+          }
+          p {
+          }
+        }
+        .c-portfolio-gallery__item-description {
+          * {
+            font-size: var(--hctc-font-md);
+            margin: 0;
+            margin-bottom: var(--hctc-spacing-md);
+          }
+        }
+      }
+    }
+  }
+  /*  */
+  /* variant - default */
   &--bg {
     position: absolute;
     transform: translate(-50%, -50%);
