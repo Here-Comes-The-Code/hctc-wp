@@ -10,6 +10,9 @@ $media-max-height: 200px;
 }
 .c-text-with-media {
   padding: var(--hctc-spacing-paragraph);
+  &__default {
+    align-items: center;
+  }
   &__refs {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -103,8 +106,10 @@ $media-max-height: 200px;
         }
       }
     }
+    $max-img-width: 250px;
+    $max-txt-width: 270px;
     &-img {
-      max-width: 250px;
+      max-width: $max-img-width;
     }
     &-title {
       @include underline(
@@ -120,12 +125,49 @@ $media-max-height: 200px;
       margin-top: var(--hctc-spacing-md);
       color: var(--hctc-theme-color-1);
       font-size: var(--hctc-font-md);
+      max-width: 270px;
     }
     &-txt {
+      max-width: $max-txt-width;
       position: relative;
       font-size: var(--hctc-font-sm);
       margin: 0;
       font-weight: 100;
+    }
+  }
+  &__img-framed {
+    $max-height: 200px;
+    $max-height-mobile: 100px;
+    $mask-height: 300px;
+    $mask-height-mobile: 150px;
+    $max-width: 700px;
+    $max-width-mobile: 500px;
+    display: flex;
+    justify-content: flex-end;
+    @include addSquareDecor(
+      color(RED),
+      0.4,
+      -5%,
+      -30%,
+      $mask-height-mobile,
+      80%
+    );
+    @include min-lg {
+      @include addSquareDecor(color(RED), 0.4, 0, -30%, $mask-height, 80%);
+    }
+    // img mask
+    div {
+      max-height: $max-height-mobile;
+      max-width: $max-width-mobile;
+      @include min-lg {
+        max-height: $max-height;
+        max-width: $max-width;
+      }
+      // parallax div
+      div {
+        display: flex;
+        align-items: center;
+      }
     }
   }
   &__assets {
