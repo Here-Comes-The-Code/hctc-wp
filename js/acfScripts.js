@@ -26,7 +26,7 @@ const setAccordionName = () => {
         );
         const inputTitle = acc.classList.contains('acf-field-wysiwyg')
           ? acc.querySelector('textarea')
-            ? acc.querySelector('textarea').innerText
+            ? acc.querySelector('textarea').value
             : ''
           : acc.querySelector('input')
           ? acc.querySelector('input').value
@@ -37,7 +37,9 @@ const setAccordionName = () => {
         title.innerText = `${
           checkbox && checkbox.checked ? '[x] ' : ''
         }${stripHTML(inputTitle)}${
-          inputSubtitle && inputSubtitle.value ? ` - ${inputSubtitle.value}` : ''
+          inputSubtitle && inputSubtitle.value
+            ? ` - ${inputSubtitle.value}`
+            : ''
         }`;
       }
     });
