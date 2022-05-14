@@ -1,5 +1,6 @@
 <?php /* Template Name: HCTC - Strona główna */
 
+$page_id = 'homepage';
 get_header();
 ?>
 <div id="primary" class="content-area">
@@ -9,7 +10,7 @@ get_header();
       'template-parts/components/hero-banner',
       null,
       array(
-        'page' => 'homepage',
+        'page' => $page_id,
       )
     ); ?>
     <?php
@@ -20,7 +21,7 @@ get_header();
       'template-parts/components/separator',
       null,
       array(
-        'page' => 'homepage',
+        'page' => $page_id,
         'id' => 'separator-1',
       )
     ); ?>
@@ -28,14 +29,20 @@ get_header();
       'template-parts/components/cta-bar',
       null,
       array(
-        'page' => 'homepage',
+        'page' => $page_id,
         'id' => 'cta-1',
       )
     ); ?>
     <?php
     get_template_part(
-      'template-parts/page/homepage/portfolio-gallery',
-    ); ?>
+      'template-parts/components/portfolio-gallery',
+      null,
+      array(
+        'page' => $page_id,
+        'id' => 'portfolio-gallery',
+        'item_id' => 'portfolio-item'
+      )
+  ); ?>
     <?php
     get_template_part(
       'template-parts/page/homepage/portfolio-done',
@@ -44,7 +51,7 @@ get_header();
       'template-parts/components/separator',
       null,
       array(
-        'page' => 'homepage',
+        'page' => $page_id,
         'id' => 'separator-2',
         'type' => 'reversed',
       )
@@ -56,7 +63,7 @@ get_header();
       'template-parts/components/cta-bar',
       null,
       array(
-        'page' => 'homepage',
+        'page' => $page_id,
         'id' => 'cta-2',
       )
     ); ?>
