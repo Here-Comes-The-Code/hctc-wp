@@ -2,17 +2,41 @@
 	padding: var(--hctc-spacing-md) var(--hctc-spacing-lg);
 	@include restrict-desktop-width;
 	gap: var(--hctc-spacing-xxl);
-	@include min-md { 
+	@include min-md {
 		gap: var(--hctc-spacing-md);
-	 }
+	}
 	display: grid;
 	grid-template-columns: 1fr;
 	align-items: center;
-	margin: var(--hctc-spacing-xl);
+	margin: var(--hctc-spacing-xl) 0;
 	@include min-sm {
 		grid-template-columns: 0.7fr 0.3fr;
 	}
 
+	strong,
+	b {
+		// color: var(--hctc-theme-color-1);
+	}
+	&--secondary {
+		grid-template-columns: 1fr;
+		.c-cta-bar__wrapper {
+			display: flex;
+			@include addSquareDecor(color(RED), 0.4, 25%, 0%, 100px, 75%);
+			@include min-md {
+				@include addSquareDecor(color(RED), 0.4, 25%, -30%, 100px, 75%);
+			}
+		}
+
+		.c-cta-bar__btns {
+			margin-right: var(--hctc-spacing-xl);
+		}
+		.c-cta-bar__content {
+			margin-left: 0;
+			&::after {
+				display: none;
+			}
+		}
+	}
 	&__content {
 		margin-left: var(--hctc-spacing-xl);
 		@include addSquareDecor(color(RED), 0.5, -5%, unset, 60px, 60%);
@@ -21,6 +45,7 @@
 		p {
 			font-size: var(--hctc-font-lg);
 			margin: 0;
+			font-weight: 100;
 		}
 		strong {
 			font-weight: 900;
