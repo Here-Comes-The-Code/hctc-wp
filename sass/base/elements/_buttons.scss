@@ -31,8 +31,8 @@ button,
 	padding: var(--hctc-spacing-md) var(--hctc-spacing-lg);
 	border: unset;
 	line-height: 1;
-	box-shadow: var(--hctc-box-shadow-gray-light-1),
-		inset var(--hctc-box-shadow-gray-light-0);
+	box-shadow: var(--hctc-box-shadow-gray-md-1),
+		inset var(--hctc-box-shadow-gray-md-0);
 	transition: var(--hctc-transition-global);
 	border-radius: var(--hctc-border-radius-md);
 	cursor: pointer;
@@ -48,8 +48,8 @@ button,
 	&:hover,
 	&:focus,
 	&:active {
-		box-shadow: var(--hctc-box-shadow-gray-light-0),
-			inset var(--hctc-box-shadow-gray-light-1);
+		box-shadow: var(--hctc-box-shadow-gray-md-0),
+			inset var(--hctc-box-shadow-gray-md-1);
 	}
 }
 
