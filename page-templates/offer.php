@@ -31,6 +31,7 @@ $acf_data = get_field($page_id, 'options');
         'read-more' => $acf_data['about']['read-more'],
         'images' => $acf_data['about']['media']['images'],
         'decor' => $acf_data['about']['media']['decor'],
+        'img-variant' => 'framed'
       )
     );
     ?>
