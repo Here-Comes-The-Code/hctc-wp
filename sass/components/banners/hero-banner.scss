@@ -73,6 +73,7 @@ $banner-overlay: var(--hctc-spacing-xl);
 
 .c-hero-banner--alt {
   min-height: $min-banner-alt-height;
+  margin-bottom: var(--hctc-spacing-xl);
   .c-hero-banner__txt {
     &-title {
       max-width: $max-text-alt-width;
