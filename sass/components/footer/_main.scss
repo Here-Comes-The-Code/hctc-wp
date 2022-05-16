@@ -2,6 +2,7 @@ footer {
   @include addBg("../assets/footer-bg.png");
 }
 
+$distance-multiplier: -2.5;
 .c-footer {
   &--icon {
     &-info {
@@ -9,7 +10,7 @@ footer {
         "\f05a",
         var(--hctc-font-xl),
         0,
-        calc(-2 * var(--hctc-spacing-xl)),
+        calc($distance-multiplier * var(--hctc-spacing-xl)),
         absolute
       );
     }
@@ -18,7 +19,7 @@ footer {
         "\f2a0",
         var(--hctc-font-xl),
         0,
-        calc(-2 * var(--hctc-spacing-xl)),
+        calc($distance-multiplier * var(--hctc-spacing-xl)),
         absolute
       );
     }
@@ -27,7 +28,7 @@ footer {
         "\f0e0",
         var(--hctc-font-xl),
         0,
-        calc(-2 * var(--hctc-spacing-xl)),
+        calc($distance-multiplier * var(--hctc-spacing-xl)),
         absolute
       );
     }
@@ -36,7 +37,7 @@ footer {
         "\f041",
         var(--hctc-font-xl),
         0,
-        calc(-2 * var(--hctc-spacing-xl)),
+        calc($distance-multiplier * var(--hctc-spacing-xl)),
         absolute
       );
     }
@@ -45,7 +46,7 @@ footer {
         "\f0e8",
         var(--hctc-font-xl),
         0,
-        calc(-2 * var(--hctc-spacing-xxl)),
+        calc($distance-multiplier * var(--hctc-spacing-xxl)),
         absolute
       );
     }
