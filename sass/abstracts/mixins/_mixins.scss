@@ -208,7 +208,8 @@
 	$marginBottom: -10px
 ) {
 	overflow-x: clip;
-	position: relative;
+	position: absolute;
+	width: 100%;
 	&::before,
 	&::after {
 		// overflow: hidden;
@@ -221,9 +222,9 @@
 	}
 	&::before {
 		@if ($pull == left) {
-			transform: translateX(-10%);
+			max-width: 90%;
 		} @else {
-			transform: translateX(10%);
+			max-width: 90%;
 		}
 		#{$pull}: 0;
 		#{$vertical}: $marginTop;
