@@ -97,11 +97,9 @@ $triangle-width: 50px;
   }
   &--line-decor {
     &-top {
-      max-width: 100vw;
       @include underline-full-width(left, top);
     }
     &-bottom {
-      max-width: 100vw;
       @include underline-full-width(right, bottom);
     }
   }
@@ -248,6 +246,182 @@ $triangle-width: 50px;
       strong {
         font-weight: 900;
       }
+    }
+  }
+}
+
+.c-portfolio-references {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  &__btn {
+    margin: var(--hctc-spacing-md) auto;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      max-height: 300px;
+      &:disabled {
+        opacity: 0.3;
+      }
+    }
+  }
+  &__item {
+    padding: var(--hctc-spacing-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--hctc-transition-global);
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+      max-height: 1000px;
+    }
+    &:nth-child(2n) {
+      background-color: var(--hctc-theme-color-1-transparent-3);
+    }
+    &-modal {
+      background-color: rgba(0, 0, 0, 0.75);
+      left: 0;
+      top: 0;
+      opacity: 0;
+      visibility: hidden;
+      max-height: 0;
+      transition: var(--hctc-transition-global);
+      z-index: -1;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      @include flexLayout;
+      &.active {
+        z-index: 10;
+        max-height: 2000px;
+        opacity: 1;
+        visibility: visible;
+      }
+      > div {
+        max-width: 800px;
+        height: auto;
+        position: relative;
+        > button {
+          position: absolute;
+          right: 0;
+          top: 0;
+          background-color: var(--hctc-theme-color-3);
+          color: var(--hctc-theme-color-1);
+        }
+      }
+    }
+    &-img {
+      // @include flexLayout;
+      // position: relative;
+      // button {
+      //   position: absolute;
+      //   right: var(--hctc-spacing-lg);
+      //   top: var(--hctc-spacing-lg);
+      // }
+      // img {
+      //   height: auto;
+      //   max-width: 90vw;
+      // }
+    }
+    &-btn {
+      height: unset;
+      min-height: unset;
+      font-size: var(--hctc-font-sm);
+      margin-bottom: var(--hctc-spacing-md);
+      opacity: 0.5;
+      width: fit-content;
+      margin-left: auto;
+    }
+
+    &-description {
+      margin-bottom: var(--hctc-spacing-xl);
+      max-height: 300px;
+      overflow: auto;
+      p {
+        margin: 0;
+        font-weight: 100;
+      }
+    }
+    &-author {
+      width: fit-content;
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    &-decor {
+      display: flex;
+      width: 100%;
+      @include underline;
+    }
+    &-title {
+      font-size: var(--hctc-font-md);
+      width: fit-content;
+      margin: 0;
+      margin-top: var(--hctc-spacing-md);
+      margin-left: auto;
+      line-height: 1;
+    }
+    &-subtitle {
+      font-size: var(--hctc-font-sm);
+      width: fit-content;
+      margin-left: auto;
+    }
+  }
+}
+.c-portfolio-projects {
+  display: grid;
+  gap: var(--hctc-spacing-lg);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  &__btn {
+    margin: var(--hctc-spacing-md) auto;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      max-height: 300px;
+      &:disabled {
+        opacity: 0.3;
+      }
+    }
+  }
+  &__item {
+    box-shadow: var(--hctc-box-shadow-gray-light-2);
+    padding: var(--hctc-spacing-md);
+    text-align: center;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--hctc-transition-global);
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+      max-height: 300px;
+    }
+    &-title {
+      margin: 0;
+      font-size: var(--hctc-font-md);
+    }
+    &-subtitle {
+      font-size: var(--hctc-font-sm);
+      font-weight: 100;
     }
   }
 }
