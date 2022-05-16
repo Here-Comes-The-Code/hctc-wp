@@ -13,7 +13,10 @@
   flex-direction: column-reverse;
   padding-left: var(--hctc-spacing-xl);
   padding-right: var(--hctc-spacing-xl);
+  gap: var(--hctc-spacing-md);
+
   @include min-md {
+    gap: unset;
     flex-direction: row;
     height: var(--hctc-header-top-bar-height);
   }
@@ -32,6 +35,7 @@
       text-align: center;
       justify-content: center;
     }
+    font-weight: 100;
     @include flexLayout(flex-start, center);
     color: var(--hctc-header-top-bar-font-color);
     gap: var(--hctc-spacing-md);
