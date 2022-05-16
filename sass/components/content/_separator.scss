@@ -11,6 +11,11 @@ $separator-text-margin-left: var(--hctc-spacing-xl);
 			@include max-width-restriction(padding-right);
 			padding-left: unset;
 		}
+		.c-separator__content-link,
+		.c-separator__content-title {
+			margin-left: 0;
+			margin-right: var(--hctc-spacing-md);
+		}
 		.c-separator__img {
 			clip-path: polygon(0 0, 75% 0%, 100% 100%, 0% 100%);
 			&::after {
@@ -20,7 +25,7 @@ $separator-text-margin-left: var(--hctc-spacing-xl);
 		}
 	}
 	&__content {
-		padding: 0 var(--hctc-spacing-md);
+		padding: 0 var(--hctc-spacing-xl);
 		@include max-width-restriction(padding-left);
 		position: relative;
 		&-link {
@@ -35,14 +40,14 @@ $separator-text-margin-left: var(--hctc-spacing-xl);
 				$separator-txt-color-title
 			);
 			margin-bottom: var(--hctc-spacing-sm);
-			@include responsiveFontSize(lg, md);
+			@include responsiveFontSize(lg, lg);
 		}
 		&-title {
 			font-weight: 900;
 			margin: 0;
 			margin-left: $separator-text-margin-left;
 			color: $separator-txt-color-title;
-			@include responsiveFontSize(xxl, lg);
+			@include responsiveFontSize(xxl, xl);
 		}
 	}
 	&__img {
