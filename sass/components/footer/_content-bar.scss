@@ -11,6 +11,7 @@
     align-content: space-evenly;
     justify-content: center;
     justify-items: center;
+    gap: var(--hctc-spacing-lg);
     @include min-md {
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
@@ -37,9 +38,9 @@
         margin: 0;
         display: block;
         font-weight: 100;
-
+        text-align:center;
         .c-footer--icon {
-          left: calc(-2 * var(--hctc-spacing-xl));
+          left: calc(-3 * var(--hctc-spacing-xl));
         }
       }
     }
