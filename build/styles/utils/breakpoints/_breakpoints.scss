@@ -1,0 +1,106 @@
+@use "sass:map";
+
+$max-width-full: calc(
+  100vw - map.get($hctc-theme-variables, "max-content-width")
+);
+$max-width-side: calc($max-width-full / 2);
+// max-width-container
+@mixin padding-max-width {
+  @media only screen and (min-width: map.get($hctc-theme-variables, "max-content-width")) {
+    padding-left: $max-width-side;
+    padding-right: $max-width-side;
+  }
+}
+
+@mixin max-width-restriction($property) {
+  @media only screen and (min-width: map.get($hctc-theme-variables, "max-content-width")) {
+    #{$property}: $max-width-side;
+  }
+}
+@mixin restrict-desktop-width {
+  @include padding-max-width;
+}
+
+$breakpoints: (
+  "xs": 320px,
+  "sm": 480px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+// Responsiveness mixins
+@mixin min-xs {
+  @media only screen and (min-width: 320px) {
+    @content;
+  }
+}
+
+@mixin min-sm {
+  @media only screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin min-md {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin min-lg {
+  @media only screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin min-xl {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin min-xxl {
+  @media only screen and (min-width: 1400px) {
+    @content;
+  }
+}
+
+/* max */
+
+@mixin max-xs {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin max-sm {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin max-md {
+  @media only screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin max-lg {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin max-xl {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin max-xxl {
+  @media only screen and (max-width: 1400px) {
+    @content;
+  }
+}

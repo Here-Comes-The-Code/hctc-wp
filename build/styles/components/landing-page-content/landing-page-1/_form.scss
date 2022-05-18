@@ -1,0 +1,105 @@
+.c_lpi__form {
+  &-title {
+    padding: 15px;
+    h3 {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 15px;
+      background-color: #fafafa;
+      border-radius: 15px;
+      text-align: center;
+    }
+  }
+  &-content {
+    padding: 0 15px;
+    order: 1;
+    @include min-md {
+      order: unset;
+      padding: 0;
+    }
+    .nf-before-form-content {
+      text-align: center;
+    }
+    .nf-form-content {
+      max-width: 600px;
+      .nf-error-msg {
+        text-align: center;
+      }
+    }
+    .nf-after-form-content {
+      .nf-error-msg {
+        margin: 30px 0;
+      }
+    }
+    input {
+      background-color: transparent !important;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+      border: 0 !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5) !important;
+      &[type="button"] {
+        background-color: var(--hctc-theme-color-1) !important;
+        margin: 0 auto !important;
+        background: #333;
+        border: 0;
+        color: #f7f7f7;
+        transition: all 0.5s;
+        display: flex;
+        justify-content: center;
+        border-radius: 15px;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+        text-transform: uppercase;
+        min-width: 100%;
+        font-weight: 600;
+        @include min-md {
+          min-width: 300px;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: #fff !important;
+          color: var(--hctc-theme-color-1) !important;
+        }
+      }
+    }
+    textarea {
+      background-color: transparent !important;
+      border: 0;
+    }
+  }
+  &-img {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+    @include min-md {
+      padding: 0 15px;
+      order: unset;
+    }
+  }
+  &-notification {
+    padding: 15px;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 15px;
+    width: 100%;
+    margin: 0 auto;
+    order: 1;
+    @include min-md {
+      order: unset;
+      grid-column: span 2;
+    }
+    p {
+      font-size: 12px !important;
+      line-height: 1;
+      font-weight: 600;
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

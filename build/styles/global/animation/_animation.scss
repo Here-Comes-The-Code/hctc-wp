@@ -1,0 +1,47 @@
+// remove transition from below elements
+body,
+.website-wrapper,
+.basel-logo img,
+.icon-patronite,
+a,
+.wishlist-info-widget,
+i,
+.main-page-wrapper,
+.sub-menu-dropdown,
+.sticky-header,
+.basel-blog-holder.row header,
+.basel-blog-holder.row article,
+.basel-blog-holder.row .entry-content,
+.post-date {
+  transition: 0s !important;
+}
+
+// transition fix
+.post-img-wrapp {
+  transition: 0.3s !important;
+}
+
+@keyframes animate-loading {
+  from {
+    transform: scale(1);
+    background-color: var(--hctc-theme-color-4);
+    color: var(--hctc-theme-color-5);
+    border: 0;
+  }
+  to {
+    transform: scale(0.9);
+    opacity: 0.1;
+    background-color: var(--hctc-theme-color-1);
+    color: var(--hctc-theme-color-3);
+    border: 0;
+  }
+}
+
+@keyframes changeBS {
+  from {
+    box-shadow: 0 0px 10px 0 #ccc;
+  }
+  to {
+    box-shadow: 0px 0px 15px 0 #ccc;
+  }
+}

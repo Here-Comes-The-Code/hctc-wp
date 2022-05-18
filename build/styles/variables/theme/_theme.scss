@@ -1,0 +1,42 @@
+$theme-prefix: hctc;
+// scss variables
+$hctc-theme-variables: (
+  // palette
+  "theme-color-1": color(CYAN),
+  "theme-color-2": color(BLACK),
+  "theme-color-3": color(WHITE),
+  "theme-color-4": color(GRAY-LIGHT),
+  "theme-color-5": color(GRAY-MEDIUM),
+  "theme-color-6": color(GRAY-DARK),
+  "theme-color-gray-alpha-sm": rgba(0, 0, 0, 0.1),
+  // night mode palette
+  "night-mode-color-0": var(--hctc-theme-color-3),
+  "night-mode-color-1": var(--hctc-theme-color-4),
+  "night-mode-color-2": var(--hctc-theme-color-5),
+  "night-mode-color-3": var(--hctc-theme-color-6),
+  // layout
+  "max-content-width": 1200px,
+  // text
+  "txt-color-1": var(--hctc-theme-color-6),
+  "txt-color-2": var(--hctc-theme-color-1),
+  "txt-color-3": var(--hctc-theme-color-3),
+  // text size
+  "txt-size-sm": 0.8rem,
+  "txt-size-md": 1rem,
+  "txt-size-lg": 1.2rem,
+  "txt-size-xl": 1.5rem,
+  "txt-size-xxl": 2rem,
+  "txt-size-xxxl": 2.5rem,
+  // article
+  "article-max-width": 100ch,
+  "article-font-size": var(--hctc-txt-size-xl),
+  // ad
+  "ad-banner-height": 200px
+);
+// Expose variables
+:root {
+  // Custom theme variables
+  @each $key, $value in $hctc-theme-variables {
+    --#{$theme-prefix}-#{$key}: #{$value};
+  }
+}

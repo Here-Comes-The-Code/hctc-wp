@@ -1,0 +1,21 @@
+@use "sass:map";
+
+// helper
+@function color($code, $default: #000) {
+  $color: map.get($hctc-colors, $code);
+  @if ($color) {
+    @return $color;
+  } @else {
+    @return $default;
+  }
+}
+
+$hctc-colors: (
+  CYAN: #199aaf,
+  BLACK: #000,
+  WHITE: #fff,
+  GRAY-LIGHT: rgb(204, 204, 204),
+  GRAY-MEDIUM: rgb(156, 156, 156),
+  GRAY-DARK: rgb(27, 25, 25),
+  
+);

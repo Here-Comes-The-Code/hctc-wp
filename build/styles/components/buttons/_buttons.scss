@@ -1,0 +1,77 @@
+/*  button - transparent  */
+$btn-transparent-bg-color: transparent;
+$btn-transparent-txt-color: var(--hctc-theme-color-6);
+$btn-transparent-bg-color-active: var(--hctc-theme-color-3);
+$btn-transparent-txt-color-active: var(--hctc-theme-color-1);
+
+/* button - styles */
+.btn {
+  font-weight: 900;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px 15px;
+  transition: 0.5s;
+  &:disabled {
+    opacity: 0.1;
+    filter: grayscale(1);
+  }
+}
+
+/* button - transparent */
+.btn-transparent {
+  background-color: transparent;
+  border: 0 !important;
+  color: $btn-transparent-txt-color;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $btn-transparent-bg-color-active;
+    color: $btn-transparent-txt-color-active;
+  }
+}
+
+/* button - night mode */
+// night mode styling found in global/night-mode
+$box-shadow-light-color: rgb(255, 193, 7);
+.c_btn {
+  &--night-mode {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    bottom: -5px;
+    box-shadow: 0 0 15px 0 $box-shadow-light-color;
+    border-radius: 100;
+    padding: 5px;
+    border-radius: 100%;
+    transition: 0.5s;
+    cursor: pointer;
+    &:hover,
+    &:focus,
+    &:active {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px 0 $box-shadow-light-color;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+// btn - night mode variant
+.night-mode-active {
+  .c_btn--night-mode {
+    filter: grayscale(1);
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 0 #fff;
+    img {
+      opacity: 0.75;
+    }
+  }
+}

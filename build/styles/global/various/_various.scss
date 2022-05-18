@@ -1,0 +1,48 @@
+// remove additional top-padding from main section on homepage
+.home {
+  .main-page-wrapper {
+    padding-top: 0;
+  }
+}
+
+// hide fav item widget
+.wishlist-info-widget {
+  display: none !important;
+}
+
+// hide shop nav item
+.basel-navigation .menu > li.menu-item-design-default:nth-of-type(5) {
+  a {
+    display: none;
+    &::after {
+    }
+  }
+}
+
+// hide shop on mobile
+.mobile-nav {
+  z-index: 999999999;
+  .site-mobile-menu {
+    > li:nth-child(5) {
+      display: none;
+    }
+  }
+}
+
+// basel open popup
+.basel-open-popup {
+  border-radius: 100% !important;
+  bottom: 20px !important;
+}
+
+// remove issue with text separator being dislocated
+.vc_separator {
+  > h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0 !important;
+  }
+}

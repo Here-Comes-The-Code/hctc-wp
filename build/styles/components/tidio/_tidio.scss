@@ -1,0 +1,54 @@
+/*
+    Hide tidio chat on all sites but portfolio
+*/
+
+// enable / disable tidio styling depending on class
+.tidio-active {
+  #tidio-chat {
+    display: block !important;
+    opacity: 1;
+
+    .chat-closed {
+      > * {
+        border-radius: 0 !important;
+      }
+    }
+  }
+
+  .scrollToTop {
+    bottom: 85px !important;
+    @media only screen and (max-width: 768px) {
+      bottom: 78px !important;
+    }
+  }
+
+  #onesignal-bell-launcher {
+    bottom: 40px !important;
+  }
+
+  // onesignal launcher button
+  #onesignal-bell-container.onesignal-reset {
+    bottom: 105px !important;
+  }
+}
+
+#tidio-chat {
+  display: none !important;
+  opacity: 0;
+}
+
+#tidio-chat {
+  transition-delay: 1s;
+  transition: 0.5s;
+}
+
+#tidio-chat-iframe {
+  right: 20px !important;
+  bottom: 0px !important;
+  transform: scale(0.9) !important;
+  @media only screen and (max-width: 768px) {
+    right: -2px !important;
+    bottom: 1px !important;
+    transform: scale(0.9) !important;
+  }
+}

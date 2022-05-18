@@ -1,0 +1,122 @@
+.c_lpi__hero-banner {
+  border-radius: 15px;
+  overflow: hidden;
+  min-height: 500px;
+  position: relative;
+  @include min-md {
+    min-height: 600px;
+  }
+  &-img {
+    height: 100%;
+    max-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    img {
+      max-width: 150%;
+      @include min-md {
+        max-width: 115%;
+      }
+      height: auto;
+    }
+  }
+  &-text {
+    gap: 15px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.33);
+    backdrop-filter: blur(5px) brightness(1.2) contrast(1.3);
+    box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.5);
+    text-align: center;
+
+    @include min-md {
+      text-align: end;
+    }
+    padding: 15px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+
+    @include min-md {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    align-items: center;
+  }
+  &-title {
+    background: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    backdrop-filter: blur(5px) brightness(1.2) contrast(1.3);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+    height: fit-content;
+    display: grid;
+    place-items: center;
+    @include min-md {
+      height: 80px;
+    }
+    @include min-lg {
+      height: 115px;
+    }
+    h2 {
+      line-height: 1;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: 2px;
+      font-size: 30px;
+      @include min-md {
+        font-size: 40px;
+      }
+      @include min-lg {
+        font-size: 60px;
+      }
+      text-shadow: 0 0 15px;
+      color: var(--hctc-theme-color-1);
+    }
+    span {
+      font-weight: 300;
+      line-height: 1;
+      margin-bottom: 0;
+      color: #888;
+    }
+  }
+  &-logos {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fff;
+    border-radius: 15px;
+    width: 100%;
+    @include min-md {
+      width: fit-content;
+    }
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+    @include min-md {
+      min-width: unset;
+      background-color: transparent;
+      border-radius: 0;
+      box-shadow: unset;
+    }
+    img {
+      padding: 5px;
+      width: auto;
+      height: 50px;
+      @include min-md {
+        border-radius: 15px;
+        height: 80px;
+        padding: 15px;
+        background-color: #fff;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+      }
+      @include min-lg {
+        height: 115px;
+        padding: 15px;
+      }
+    }
+  }
+}

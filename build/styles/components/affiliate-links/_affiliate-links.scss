@@ -1,0 +1,102 @@
+.c_affiliate-links {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+    margin: 30px 0;
+  }
+  &__item {
+    @media (max-width: 520px) {
+      padding: 15px;
+    }
+    &-header {
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+      &:hover,
+      &:focus,
+      &:active {
+        .c_affiliate-links__item-thumb {
+          transform: scale(1.02);
+        }
+      }
+    }
+    &-thumb {
+      display: flex;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: 0.3s;
+      margin-bottom: 5px;
+      &-container {
+        min-height: 225px;
+        display: flex;
+      }
+    }
+    &-date {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      background-color: #fff;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+      z-index: 10;
+    }
+    &-price {
+      display: flex;
+      position: absolute;
+      right: 15px;
+      bottom: 15px;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+
+      &--old {
+        padding: 5px 15px;
+        text-decoration: line-through;
+        background-color: #ccc;
+        opacity: 0.75;
+        color: rgba(0, 0, 0, 0.75);
+        filter: drop-shadow(0 0 5px #000);
+        &:empty {
+          display: none;
+        }
+      }
+
+      &--new {
+        padding: 5px 15px;
+        background-color: var(--hctc-theme-color-1);
+        font-weight: 700;
+        color: #fff;
+        filter: drop-shadow(0 0 5px #000);
+        &:empty {
+          display: none;
+        }
+      }
+    }
+    &-title {
+      padding: 5px 10px;
+      margin-bottom: 0;
+    }
+    &-category {
+      margin-left: auto;
+      text-align: end;
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+  }
+  &__trigger {
+    margin: 30px auto;
+    display: block;
+    max-width: 300px;
+    &.is-loading {
+      color: transparent;
+      background-color: var(--hctc-theme-color-1);
+      animation-duration: 2s;
+      animation-iteration-count: 1;
+      animation-name: animate-loading;
+      animation-fill-mode: both;
+    }
+  }
+}

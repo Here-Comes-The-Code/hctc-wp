@@ -1,0 +1,30 @@
+// change default article font size
+.post-single-large-image p,
+.post-single-large-image a,
+.post-single-large-image li,
+.portfolio-single-content p,
+.portfolio-single-content a:not(.product_type_simple):not(.basel-tooltip),
+.portfolio-single-content li,
+.portfolio-single-content .basel-plan-feature {
+  font-size: var(--hctc-article-font-size) !important;
+}
+
+// fix table font&color issue
+$font-size-table-label: 18px;
+$font-size-table-value: 18px;
+table {
+  tbody {
+    tr {
+      th {
+        border: 0 !important;
+        color: #1b1919;
+        font-size: $font-size-table-label !important;
+      }
+      td {
+        border: 0 !important;
+        color: #1b1919;
+        font-size: $font-size-table-value !important;
+      }
+    }
+  }
+}

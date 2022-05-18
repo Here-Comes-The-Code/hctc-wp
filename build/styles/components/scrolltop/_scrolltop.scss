@@ -1,0 +1,13 @@
+// scrolltotop styling
+.scrollToTop {
+  background: var(--hctc-theme-color-1) !important;
+  color: var(--hctc-theme-color-3) !important;
+  border: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 20px !important;
+  &::after {
+    color: var(--hctc-theme-color-3) !important;
+  }
+}
