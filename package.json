@@ -1,37 +1,71 @@
 {
-  "name": "Basel Child",
+  "name": "smartme-basel-child",
   "description": "Basel Child Theme",
-  "title": "Fiercely quick and opinionated front-ends",
+  "title": "Theme modification for smartme.pl, based on basel template",
   "template": "basel",
   "version": "1.0.5",
-  "textDomain": "basel-child",
+  "textDomain": "smartme-basel-child",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/HosseinKarami/fastshell.git"
-  },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/register": "^7.17.7",
+    "@wordpress/scripts": "^19.2.2",
     "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
-    "browser-sync": "^2.26.7",
+    "babel-preset-latest": "^6.24.1",
+    "babelify": "^10.0.0",
+    "dir-archiver": "^1.1.1",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^3.1.0",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-cli": "^2.3.0",
     "gulp-concat": "^2.6.1",
-    "gulp-cssnano": "^2.1.0",
-    "gulp-header": "^1.7.1",
-    "gulp-jshint": "^2.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^1.5.1",
-    "gulp-uglify-es": "^1.0.4",
-    "jshint": "^2.10.2"
+    "gulp-cssnano": "^2.1.3",
+    "gulp-header": "^2.0.9",
+    "gulp-jshint": "^2.1.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-uglify-es": "^3.0.0",
+    "jshint": "^2.13.4",
+    "node-sass": "^7.0.1",
+    "rollup": "^2.70.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rtlcss": "^3.5.0",
+    "webpack": "^5.72.0",
+    "webpack-stream": "^7.0.0"
+  },
+  "rtlcssConfig": {
+    "options": {
+      "autoRename": false,
+      "autoRenameStrict": false,
+      "blacklist": {},
+      "clean": true,
+      "greedy": false,
+      "processUrls": false,
+      "stringMap": []
+    },
+    "plugins": [],
+    "map": false
+  },
+  "scripts": {
+    "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+    "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "compile:rtl": "rtlcss style.css style-rtl.css",
+    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
+    "lint:js": "wp-scripts lint-js 'js/*.js'",
+    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
   },
   "dependencies": {
-    "gulp-sourcemaps": "^2.6.5",
-    "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony"
+    "commonjs": "0.0.1",
+    "simple-parallax-js": "^5.6.2"
   }
 }
