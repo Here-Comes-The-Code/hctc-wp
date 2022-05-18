@@ -40,7 +40,7 @@ function basel_child_enqueue_styles()
 		wp_enqueue_style('basel-style', get_template_directory_uri() . '/style.css', array('bootstrap'), $version);
 	}
 
-	wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('bootstrap'), filemtime(get_stylesheet_directory() . '/style.css'));
+	wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/dist/style.css', array('bootstrap'), filemtime(get_stylesheet_directory() . '/dist/style.css'));
 }
 
 
@@ -517,7 +517,7 @@ function smartme__custom__scripts()
 	wp_enqueue_script('swiperminjs', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
 	wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/41a8bb154d.js', array(), null, true);
 	// custom 
-	wp_enqueue_script('custom-scripts', get_stylesheet_directory_uri() . "/js/custom.js", array(), filemtime(get_stylesheet_directory() . "/js/custom.js"), true);
+	wp_enqueue_script('custom-scripts', get_stylesheet_directory_uri() . "/dist/script.js", array(), filemtime(get_stylesheet_directory() . "/dist/script.js"), true);
 	// optads
 	// added manually in head, as per request
 
