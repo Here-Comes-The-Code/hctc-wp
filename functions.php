@@ -513,8 +513,6 @@ function smartme__custom__scripts()
 {
 
 	// vendors
-	wp_enqueue_style('swipermincss', 'https://unpkg.com/swiper/swiper-bundle.min.css');
-	wp_enqueue_script('swiperminjs', 'https://unpkg.com/swiper/swiper-bundle.min.js', array(), null, true);
 	wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/41a8bb154d.js', array(), null, true);
 	// custom 
 	wp_enqueue_script('custom-scripts', get_stylesheet_directory_uri() . "/dist/script.js", array(), filemtime(get_stylesheet_directory() . "/dist/script.js"), true);
