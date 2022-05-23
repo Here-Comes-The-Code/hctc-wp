@@ -27,11 +27,27 @@ $hctc-theme-variables: (
   "txt-size-xl": 1.5rem,
   "txt-size-xxl": 2rem,
   "txt-size-xxxl": 2.5rem,
+  // header
+  "header-height": 60px,
+  "header-icon-size": 35px,
+  "header-background-color": var(--hctc-theme-color-2),
+  "header-txt-color": var(--hctc-theme-color-3),
+  "header-sub-nav-color-bg": var(--hctc-theme-color-6),
+  // spacings
+  "spacing-sm": 0.5rem,
+  "spacing-md": 0.75rem,
+  "spacing-lg": 1rem,
+  "spacing-xl": 1.5rem,
+  "spacing-xxl": 2rem,
   // article
   "article-max-width": 100ch,
   "article-font-size": var(--hctc-txt-size-xl),
   // ad
-  "ad-banner-height": 250px
+  "transition-global": 0.5s,
+  // ad
+  "ad-banner-height": 250px,
+  // border-radius
+  "border-radius-default": 5px
 );
 // Expose variables
 :root {
