@@ -2,11 +2,15 @@
 @import "./tidio/tidio";
 @import "./optads/optads";
 @import "./onesignal/onesignal";
+@import "./gtranslate/gtranslate";
 /* ui */
 @import "./buttons/buttons";
 @import "./images/images";
 @import "./scrolltop/scrolltop";
 @import "./slider/slider";
+/* layout */
+@import "./header/header";
+@import "./navigation/navigation";
 /* content */
 @import "./posts/posts";
 @import "./articles/articles";
