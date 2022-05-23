@@ -10,21 +10,21 @@
   display: none !important;
 }
 
-// hide shop nav item
-.basel-navigation .menu > li.menu-item-design-default:nth-of-type(5) {
-  a {
-    display: none;
-    &::after {
-    }
-  }
-}
+// // hide shop nav item
+// .basel-navigation .menu > li.menu-item-design-default:nth-of-type(5) {
+//   a {
+//     display: none;
+//     &::after {
+//     }
+//   }
+// }
 
 // hide shop on mobile
 .mobile-nav {
   z-index: 999999999;
   .site-mobile-menu {
     > li:nth-child(5) {
-      display: none;
+      // display: none;
     }
   }
 }
