@@ -1,0 +1,16 @@
+@mixin header-box-shadow {
+  transition: var(--hctc-transition-global);
+  border-radius: 100%;
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0 0 30px 0 var(--hctc-theme-color-1);
+  }
+}
+
+@mixin header-box-shadow-property-light {
+  box-shadow: 0 0 5px 0px var(--hctc-theme-color-1);
+}
+@mixin header-box-shadow-property {
+  box-shadow: 0 0 15px 0px var(--hctc-theme-color-1);
+}
