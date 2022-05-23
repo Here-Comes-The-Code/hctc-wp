@@ -32,7 +32,9 @@
     gtag('config', 'UA-147417535-1');
 </script>
     <meta name="google-site-verification" content="C0XMZuesaqi2aOskYb_anIKTq2wqI8kmAo6uBDEbf5I" />
-	
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Fjalla+One&family=League+Gothic&display=swap" rel="stylesheet">
 	<script type="application/ld+json">
 	
 	<?php if(get_permalink() == 'https://smartme.pl/amazon-alexa-bedzie-posredniczyla-w-teleporadach-asystent-z-nowa-funkcja/'){ ?>
