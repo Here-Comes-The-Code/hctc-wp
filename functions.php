@@ -413,10 +413,8 @@ function basel_header_block_search()
 
 	<span class=' c_slider__container '>
 		<div class='c_slider__pane js-dark-mode'>
-			<img src=<?php echo get_stylesheet_directory_uri() . '/assets/dark.svg' ?>>
-			<span class='c_slider__circle'>
-			</span>
-			<img src=<?php echo get_stylesheet_directory_uri() . '/assets/light.svg' ?>>
+			<img class='c_slider--dark' src=<?php echo get_stylesheet_directory_uri() . '/assets/dark.svg' ?>>
+			<img class='c_slider--bright' src=<?php echo get_stylesheet_directory_uri() . '/assets/light.svg' ?>>
 		</div>
 	</span>
 
