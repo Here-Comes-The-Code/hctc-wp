@@ -1,0 +1,850 @@
+	[
+    {
+        "key": "group_60a8f0797caaf",
+        "title": "Kup teraz - konfig",
+        "fields": [
+            {
+                "key": "field_60aad49cba714",
+                "label": "Tekst nad przyciskiem",
+                "name": "shoplist-txt",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_60aad4d9ba715",
+                        "label": "Czy wyświetlać wiadomość nad przyciskiem?",
+                        "name": "shoplist-txt-active",
+                        "type": "true_false",
+                        "instructions": "Zaznacz, jeżeli wiadomość dla klienta ma być wyświetlana",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 1,
+                        "ui": 0,
+                        "ui_on_text": "",
+                        "ui_off_text": ""
+                    },
+                    {
+                        "key": "field_60aad878712e3",
+                        "label": "Tytuł wiadomości",
+                        "name": "shoplist-txt-msg-title",
+                        "type": "text",
+                        "instructions": "W tym miejscu wpisz tytuł sekcji",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_60aad4d9ba715",
+                                    "operator": "==",
+                                    "value": "1"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Kup teraz",
+                        "placeholder": "Wpisz tutaj tytuł sekcji",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_60aad51fba716",
+                        "label": "Wiadomość dla klienta",
+                        "name": "shoplist-txt-msg",
+                        "type": "textarea",
+                        "instructions": "W tym miejscu możesz zedytować wiadomość wyświetlaną klientowi",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_60aad4d9ba715",
+                                    "operator": "==",
+                                    "value": "1"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "Zapraszamy do zakupu produktu na stronach wymienionych poniżej...",
+                        "placeholder": "W tym miejscu należy wpisać tekst dla klienta",
+                        "maxlength": "",
+                        "rows": "",
+                        "new_lines": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_60a8f083c35d0",
+                "label": "Lista sklepów",
+                "name": "shoplist",
+                "type": "repeater",
+                "instructions": "Zaznacz który sklep chcesz dodać",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "Dodaj tutaj sklep",
+                "sub_fields": [
+                    {
+                        "key": "field_60a8fdf0ccca5",
+                        "label": "Dodać adres?",
+                        "name": "checkbox",
+                        "type": "true_false",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "",
+                        "default_value": 0,
+                        "ui": 0,
+                        "ui_on_text": "",
+                        "ui_off_text": ""
+                    },
+                    {
+                        "key": "field_60a8fe2bccca6",
+                        "label": "Ikona sklepu",
+                        "name": "icon",
+                        "type": "image",
+                        "instructions": "Ikona wyświetlana na przycisku",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "id",
+                        "preview_size": "rpwe-thumbnail",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_60a8fe41ccca7",
+                        "label": "Nazwa sklepu",
+                        "name": "name",
+                        "type": "text",
+                        "instructions": "Nazwa sklepu",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_60a8fe52ccca8",
+                        "label": "Adres",
+                        "name": "url",
+                        "type": "url",
+                        "instructions": "Adres URL do którego zostanie przekierowany klient",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_60a8fdf0ccca5",
+                                    "operator": "==",
+                                    "value": "1"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": ""
+                    },
+                    {
+                        "key": "field_60aadc51546e7",
+                        "label": "Tekst przycisku",
+                        "name": "btn-text",
+                        "type": "text",
+                        "instructions": "Tekst wyświetlany wewnątrz przycisku",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_60a8fdf0ccca5",
+                                    "operator": "==",
+                                    "value": "1"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "Tutaj wpisz tekst wyświetlany wewnątrz przycisku",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    },
+    {
+        "key": "group_60a8144f5877f",
+        "title": "Lista sklepów - konfiguracja",
+        "fields": [
+            {
+                "key": "field_60a8145a6d36a",
+                "label": "Lista sklepów do wyboru",
+                "name": "buy-now__shop-list",
+                "type": "repeater",
+                "instructions": "Lista sklepów przycisku Kup Teraz",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_60a8147f6d36b",
+                        "label": "Ikona",
+                        "name": "icon",
+                        "type": "image",
+                        "instructions": "Opcjonalne - ikona sklepu",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "return_format": "url",
+                        "preview_size": "thumbnail",
+                        "library": "all",
+                        "min_width": "",
+                        "min_height": "",
+                        "min_size": "",
+                        "max_width": "",
+                        "max_height": "",
+                        "max_size": "",
+                        "mime_types": ""
+                    },
+                    {
+                        "key": "field_60a8149a6d36c",
+                        "label": "Nazwa",
+                        "name": "name",
+                        "type": "text",
+                        "instructions": "Nazwa sklepu",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "Wprowadź tu nazwę sklepu",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": 30
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "smartme-options-main-2"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    },
+    {
+        "key": "group_5f26d28a552cc",
+        "title": "Reklamy - konfiguracja",
+        "fields": [
+            {
+                "key": "field_5f95eeafabae2",
+                "label": "Instrukcja",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "W tym miejscu można konfigurować reklamy na stronie startowej SmartMe. W tym celu należy wybrać poszczególne zakładki, wybrać zakres czasu w którym reklama będzie wyświetlana. \r\n\r\nBanner powinien mieć ID, etykietę, oznaczony status aktywności.\r\n\r\nRozmiary bannerów - przewidziano 4 szerokości:\r\n- 0px <-> 480px\r\n- 480px <-> 768px \r\n- 768px <-> 1140px\r\n- 1140px +\r\n\r\nJeżeli posiadamy tylko banner o szerokości 1140px lub większej - należy go wgrać, a będzie on responsywnie zmniejszany do szerokości urządzenia na którym jest wyświetlany. Zaleca się w takim przypadku, aby banner posiadał odpowiednio dużą czcionke, tak aby po przeskalowaniu do niższych rozdzielczości nie stawał się on nieczytelny. Jeżeli tak jest, warto zatem sprawdzić lub poprosić o dostarczenie bannera na urządzenia mobilne.\r\n\r\nWysokość bannera jest od 0px do 350px max. Powyżej tej wysokości banner będzie centrowany.\r\n\r\nGrupy bannerów oraz bannery należy aktywować poprzez przełącznik.",
+                "new_lines": "wpautop",
+                "esc_html": 0
+            },
+            {
+                "key": "field_5f95f048a8d93",
+                "label": "Intro",
+                "name": "intro",
+                "type": "group",
+                "instructions": "Tekst wyświetlany nad bannerami. Tytuł oraz pole tekstowe poniżej.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_5f95f063a8d94",
+                        "label": "Tytuł",
+                        "name": "title",
+                        "type": "text",
+                        "instructions": "Tytuł, wyświetlany w formie napisu jak inne podsekcje strony - \"RECENZJE\", \"PORADNIKI\", itp.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "np. \"Reklama\"",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_5f95f117a8d95",
+                        "label": "Opis",
+                        "name": "description",
+                        "type": "text",
+                        "instructions": "W tym miejscu można dodać opis bannerów. Będzie on wyświetlany nad bannerem, pod tytułem.",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "np. \" W tym miesiącu prezentujemy Państwu firmę SmartMe zajmującą się zawodowo tematyką SmartHome.\"",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    }
+                ]
+            },
+            {
+                "key": "field_5f95f3193b418",
+                "label": "Konfiguracja",
+                "name": "ads-cfg",
+                "type": "repeater",
+                "instructions": "W tym miejscu można dodać grupę bannerów. Grupa może składać się z jednego lub więcej bannerów.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "field_5f95f3333b424",
+                "min": 0,
+                "max": 0,
+                "layout": "block",
+                "button_label": "Dodaj grupę bannerów",
+                "sub_fields": [
+                    {
+                        "key": "field_5f95f3333b424",
+                        "label": "Grupa bannerów",
+                        "name": "id",
+                        "type": "text",
+                        "instructions": "W tym miejscu należy uzupełnić ID grupy bannerów. ( np. nazwa firmy, klienta, itp. )",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "np. \" Bannery SmartMe - YouTube, FB\"",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_5f95f3853b425",
+                        "label": "Czy grupa bannerów jest aktywna?",
+                        "name": "is-active",
+                        "type": "true_false",
+                        "instructions": "W tym miejscu należy określić czy grupa banerów jest obecnie aktywna czy nie.",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "message": "Czy grupa bannerów jest aktywna?",
+                        "default_value": 0,
+                        "ui": 1,
+                        "ui_on_text": "Grupa bannerów aktywna",
+                        "ui_off_text": "Grupa bannerów nieaktywna"
+                    },
+                    {
+                        "key": "field_5f95fad077109",
+                        "label": "Banner - informacje",
+                        "name": "",
+                        "type": "tab",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_5f95f3853b425",
+                                    "operator": "==",
+                                    "value": "1"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "placement": "top",
+                        "endpoint": 0
+                    },
+                    {
+                        "key": "field_5f95f420b6b09",
+                        "label": "Bannery - informacje",
+                        "name": "banners",
+                        "type": "repeater",
+                        "instructions": "W tym miejscu należy dodawać kolejne bannery które będą wyświetlać się w danej grupie.",
+                        "required": 0,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_5f95f3853b425",
+                                    "operator": "==",
+                                    "value": "1"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "field_5f95f482b6b0b",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "block",
+                        "button_label": "Dodaj banner",
+                        "sub_fields": [
+                            {
+                                "key": "field_5f95fd2631179",
+                                "label": "Banner",
+                                "name": "",
+                                "type": "message",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "",
+                                "new_lines": "wpautop",
+                                "esc_html": 0
+                            },
+                            {
+                                "key": "field_5f95f482b6b0b",
+                                "label": "ID",
+                                "name": "id",
+                                "type": "text",
+                                "instructions": "W tym miejscu należy opisać ID bannera.",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "np. \"Banner 1 \", \"Banner SmartMe - YouTube\"",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5f95f446b6b0a",
+                                "label": "Czy banner jest aktywny?",
+                                "name": "is-active",
+                                "type": "true_false",
+                                "instructions": "W tym miejscu należy zaznaczyć czy banner powinien być obecnie aktywny.",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "message": "Czy banner jest aktywny?",
+                                "default_value": 0,
+                                "ui": 1,
+                                "ui_on_text": "Banner jest aktywny",
+                                "ui_off_text": "Banner jest nieaktywny"
+                            },
+                            {
+                                "key": "field_5f95f7dfb6b0c",
+                                "label": "Nazwa",
+                                "name": "name",
+                                "type": "text",
+                                "instructions": "Nazwa bannera - będzie wyświetlana na stronie, pod bannerem.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5f95f446b6b0a",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "np. \"SmartMe - YouTube!\"",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5f95f838b6b0d",
+                                "label": "Opis",
+                                "name": "description",
+                                "type": "text",
+                                "instructions": "W tym miejscu należy wprowadzić opis bannera. Będzie on wyświetlany pod bannerem, pod nazwą.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5f95f446b6b0a",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "np. \" Zapraszamy na nasz kanał YouTube! \"",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5f95f867b6b0e",
+                                "label": "Banner",
+                                "name": "img",
+                                "type": "group",
+                                "instructions": "W tym miejscu można wgrywać bannery o określonych rozdzielczościach.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5f95f446b6b0a",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "block",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5f95f887b6b0f",
+                                        "label": "opcjonalny - 0px - 480px",
+                                        "name": "sm",
+                                        "type": "image",
+                                        "instructions": "Banner o szerokości do 480px.",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "return_format": "url",
+                                        "preview_size": "medium",
+                                        "library": "all",
+                                        "min_width": "",
+                                        "min_height": "",
+                                        "min_size": "",
+                                        "max_width": "",
+                                        "max_height": "",
+                                        "max_size": "",
+                                        "mime_types": ""
+                                    },
+                                    {
+                                        "key": "field_5f95f8a5b6b10",
+                                        "label": "opcjonalny - 480px - 768px",
+                                        "name": "md",
+                                        "type": "image",
+                                        "instructions": "Banner o szerokości 480px - 768px.",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "return_format": "url",
+                                        "preview_size": "medium",
+                                        "library": "all",
+                                        "min_width": "",
+                                        "min_height": "",
+                                        "min_size": "",
+                                        "max_width": "",
+                                        "max_height": "",
+                                        "max_size": "",
+                                        "mime_types": ""
+                                    },
+                                    {
+                                        "key": "field_5f95f8b7b6b11",
+                                        "label": "opcjonalny - 768px - 1140px",
+                                        "name": "lg",
+                                        "type": "image",
+                                        "instructions": "Banner o szerokości 768px - 1140px.",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "return_format": "url",
+                                        "preview_size": "medium",
+                                        "library": "all",
+                                        "min_width": "",
+                                        "min_height": "",
+                                        "min_size": "",
+                                        "max_width": "",
+                                        "max_height": "",
+                                        "max_size": "",
+                                        "mime_types": ""
+                                    },
+                                    {
+                                        "key": "field_5f95f8d9b6b12",
+                                        "label": "DOMYŚLNY - 1140px +",
+                                        "name": "desktop",
+                                        "type": "image",
+                                        "instructions": "Banner o szerokości 1140px lub większej. Domyślna szerokość. \r\n\r\nJeżeli masz banner tylko jednej szerokości - wrzucasz go tutaj.",
+                                        "required": 1,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "return_format": "url",
+                                        "preview_size": "medium",
+                                        "library": "all",
+                                        "min_width": "",
+                                        "min_height": "",
+                                        "min_size": "",
+                                        "max_width": "",
+                                        "max_height": "",
+                                        "max_size": "",
+                                        "mime_types": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_5f95fa21ab13e",
+                                "label": "Czas rozpoczęcia wyświetlania bannera (start)",
+                                "name": "time-active-start",
+                                "type": "date_time_picker",
+                                "instructions": "Należy tu podać czas rozpoczęcia okresu w którym banner będzie wyświetlany.",
+                                "required": 1,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5f95f446b6b0a",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "d-m-Y",
+                                "return_format": "d-m-Y",
+                                "first_day": 1
+                            },
+                            {
+                                "key": "field_5f95fa59ab13f",
+                                "label": "Czas zakończenia wyświetlania bannera (koniec)",
+                                "name": "time-active-stop",
+                                "type": "date_time_picker",
+                                "instructions": "Należy tu podać czas zakończenia okresu w którym banner będzie wyświetlany.",
+                                "required": 1,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5f95f446b6b0a",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "display_format": "d-m-Y",
+                                "return_format": "d-m-Y",
+                                "first_day": 1
+                            },
+                            {
+                                "key": "field_5f96066a588fb",
+                                "label": "URL",
+                                "name": "url",
+                                "type": "url",
+                                "instructions": "W tym miejscu należy wstawić adres URL do którego będzie kierować banner.",
+                                "required": 0,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_5f95f446b6b0a",
+                                            "operator": "==",
+                                            "value": "1"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "np. \"www.google.com\""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "smartme-options-main"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    }
+]
