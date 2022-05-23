@@ -28,3 +28,33 @@ table {
     }
   }
 }
+
+@mixin font-1 {
+  font-family: "League Gothic", sans-serif !important;
+}
+
+@mixin font-2 {
+  font-family: "Cantarell", sans-serif !important;
+}
+
+// set all to cantarell font
+body.home {
+  span,
+  a,
+  li,
+  p,
+  div {
+    font-family: "Cantarell", sans-serif !important;
+  }
+}
+
+body.home {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Fjalla One", sans-serif !important;
+  }
+}
