@@ -1,126 +1,20 @@
 /* 
 general night mode styles, more detailed are attached to respective components
 */
+// remove default night mode (Basel)
+
+.color-scheme-dark {
+  a {
+    &:hover {
+      color: unset;
+    }
+  }
+}
 body.night-mode-active {
   background-color: var(--hctc-night-mode-color-3);
   // header - body - bg
   .website-wrapper {
     background-color: var(--hctc-night-mode-color-3);
-  }
-  // logo
-  .basel-logo {
-    img {
-      filter: hue-rotate(180deg) invert(1);
-    }
-  }
-
-  // headr
-  header {
-    // right icons
-    .right-column {
-      .icon-patronite {
-        filter: grayscale(0) invert(1) hue-rotate(180deg);
-      }
-      .search-button {
-        > a {
-          filter: grayscale(0) invert(1);
-          // color: var(--hctc-night-mode-color-0) !important;
-          color: #fff !important;
-          &:hover,
-          &:active,
-          &:focus {
-            color: #fff !important;
-          }
-        }
-        i {
-          filter: grayscale(0) invert(1);
-          // color: var(--hctc-night-mode-color-0) !important;
-          color: #fff !important;
-          &:hover,
-          &:active,
-          &:focus {
-            color: #fff !important;
-          }
-        }
-      }
-
-      .wishlist-info-widget {
-        color: var(--hctc-night-mode-color-0) !important;
-        // filter:invert(1);
-        a {
-          color: var(--hctc-night-mode-color-0) !important;
-        }
-      }
-    }
-    // social icons - on the left
-    ul.social-icons {
-      li {
-        a {
-          i {
-            filter: invert(1) hue-rotate(180deg);
-          }
-        }
-      }
-    }
-
-    // navigation
-    .navigation-wrap {
-      ul {
-        li {
-          a {
-            color: #fff !important;
-            font-weight: 900;
-            &:hover,
-            &:active,
-            &:focus {
-              color: #199aaf !important;
-            }
-          }
-        }
-      }
-
-      .sub-menu-dropdown {
-        background-color: var(--hctc-night-mode-color-3) !important;
-        > li {
-          font-weight: 900;
-          a {
-            color: var(--hctc-night-mode-color-0);
-          }
-        }
-      }
-    }
-  }
-
-  // sticky header
-  .sticky-header {
-    background-color: #181818;
-    transition: 0.3s !important;
-
-    // nav
-    .menu-item {
-      font-weight: 900;
-      color: var(--hctc-night-mode-color-0);
-      a {
-        color: var(--hctc-night-mode-color-0);
-        i {
-          color: var(--hctc-night-mode-color-0);
-        }
-      }
-    }
-
-    .icon-patronite {
-      filter: grayscale(0) invert(1) hue-rotate(180deg);
-    }
-
-    .wishlist-info-widget {
-      a {
-        color: var(--hctc-night-mode-color-0);
-      }
-    }
-
-    .wishlist-count {
-      filter: grayscale(0) invert(1) hue-rotate(180deg);
-    }
   }
 
   .page-title-default {
