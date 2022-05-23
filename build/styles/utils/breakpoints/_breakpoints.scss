@@ -25,7 +25,7 @@ $breakpoints: (
   "xs": 320px,
   "sm": 480px,
   "md": 768px,
-  "lg": 1024px,
+  "lg": 991px,
   "xl": 1200px,
   "xxl": 1400px,
 );
@@ -50,7 +50,7 @@ $breakpoints: (
 }
 
 @mixin min-lg {
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: 991px) {
     @content;
   }
 }
@@ -88,7 +88,7 @@ $breakpoints: (
 }
 
 @mixin max-lg {
-  @media only screen and (max-width: 1024px) {
+  @media only screen and (max-width: 991px) {
     @content;
   }
 }
