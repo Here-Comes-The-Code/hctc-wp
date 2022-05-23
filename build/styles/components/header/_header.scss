@@ -1,0 +1,295 @@
+$header-max-height: var(--hctc-header-height);
+$header-icon-size: 35px;
+
+$header-sub-nav-color: var(--hctc-theme-color-6);
+
+
+$z-index-header: 99;
+$z-index-logo: 1;
+$z-index-social-icons: 99;
+
+.sticky-header {
+  display: none !important;
+}
+header.main-header {
+  height: unset;
+  max-height: unset;
+  @include min-sm {
+    height: $header-max-height;
+    max-height: $header-max-height;
+  }
+  background-color: var(--hctc-header-background-color);
+  margin-right: 0;
+  margin-left: 0;
+  z-index: $z-index-header;
+  position: relative;
+  > .container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: var(--hctc-spacing-md);
+    padding-right: var(--hctc-spacing-md);
+    @include padding-max-width;
+    // main header content contianer
+    .wrapp-header {
+      // remove default min-height
+      min-height: unset;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      @include min-sm {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+      align-items: center;
+      /* logo */
+      .site-logo {
+        z-index: $z-index-logo;
+        width: 100%;
+        $min-logo-width: 190px;
+        min-width: $min-logo-width;
+        display: flex;
+        justify-content: center;
+        @include min-sm {
+          width: fit-content;
+        }
+        @include max-lg {
+          margin-right: auto;
+        }
+        .basel-logo-wrap {
+          width: fit-content;
+          @include max-lg {
+            max-width: $min-logo-width;
+          }
+        }
+      }
+      /* navigation, styling in navigations.scss */
+      .navigation-wrap {
+        margin-left: auto;
+        margin-right: var(--hctc-spacing-sm);
+        > .container {
+          padding: 0;
+          width: fit-content;
+          max-width: unset;
+        }
+      }
+      /* right-column  - searchbox, light/dark mode*/
+      .right-column {
+        padding-left: 0px;
+        width: unset;
+        display: flex !important;
+        align-items: center;
+        .search-button {
+          display: block !important;
+          margin: 0;
+          @include min-lg {
+            margin-left: var(--hctc-spacing-sm);
+          }
+
+          cursor: pointer;
+          transition: var(--hctc-transition-global);
+
+          // margin-right: var(--hctc-spacing-sm);
+          &.is-active {
+            .basel-search-wrapper {
+              opacity: 1 !important;
+              visibility: visible;
+              display: block !important;
+              // set searchbox to full width when on mobile
+              @include max-sm {
+                top: unset !important;
+                width: 98vw;
+                left: 1vw;
+                position: fixed;
+                .basel-search-inner {
+                  width: 100%;
+                }
+              }
+            }
+            a {
+              &::before,
+              &::after {
+                background-color: var(--hctc-theme-color-1);
+              }
+              i {
+                opacity: 1;
+                color: var(--hctc-theme-color-1);
+                &::before {
+                  font-family: "Font Awesome 5 Free" !important;
+                  content: "\f00d" !important;
+                }
+              }
+            }
+          }
+          > a {
+            border-radius: 100%;
+            color: var(--hctc-theme-color-3) !important;
+            &:after,
+            &:before {
+              display: none !important;
+              background-color: var(--hctc-theme-color-3) !important;
+            }
+            &:hover,
+            &:focus,
+            &:active {
+              @include header-box-shadow-property;
+              color: var(--hctc-theme-color-3) !important;
+            }
+            i {
+              &::before {
+                opacity: 1 !important;
+                font-size: var(--hctc-txt-size-lg) !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /* gtranslate language icon is styled in gtranslate.scss */
+  /* social media icons  */
+  .widgetarea-head {
+    // display: none;
+    display: block !important;
+    width: unset;
+    padding: 10px;
+    margin-left: calc(#{$header-icon-size}+11px);
+    > div.widget_text {
+      > .custom-html-widget {
+        position: relative;
+        width: $header-icon-size;
+        height: $header-icon-size;
+        background-image: url("../assets/social-media.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transform: scale(0.8);
+        cursor: pointer;
+        transition: var(--hctc-transition-global);
+        &:hover,
+        &:focus,
+        &:active {
+          @include header-box-shadow-property;
+        }
+        &.is-active {
+          @include header-box-shadow-property;
+          .social-icons {
+            opacity: 1;
+            visibility: visible;
+            z-index: $z-index-social-icons;
+          }
+        }
+        .social-icons {
+          min-width: 300px;
+          z-index: -1;
+          transition: var(--hctc-transition-global);
+          opacity: 0;
+          visibility: hidden;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 90%;
+          padding: var(--hctc-spacing-sm);
+          background-color: var(--hctc-theme-color-6);
+          min-width: 200px;
+          display: flex;
+          align-items: center;
+          gap: var(--hctc-spacing-sm);
+          border-radius: var(--hctc-border-radius-default);
+          @include header-box-shadow-property-light;
+          li {
+            cursor: pointer;
+            &:hover,
+            &:focus,
+            &:active {
+              i {
+                color: var(--hctc-theme-color-1);
+              }
+            }
+            a {
+              color: var(--hctc-theme-color-3);
+              i {
+                &::before {
+                  font-size: var(--hctc-txt-size-xl);
+                }
+                color: var(--hctc-theme-color-3);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mobile-nav-icon {
+    // hide default menu icon
+    display: none !important;
+  }
+}
+
+/* searchbox */
+.basel-search-inner {
+  background-color: var(--hctc-theme-color-6) !important;
+  @include header-box-shadow-property-light;
+  box-shadow: 0 0 5px 0px var(--hctc-theme-color-1) !important;
+  border-radius: var(--hctc-border-radius-default);
+  form.searchform {
+    input {
+      background-color: transparent !important;
+      border: unset !important;
+      border-bottom: 2px solid var(--hctc-theme-color-1) !important;
+      color: var(--hctc-theme-color-1) !important;
+      font-weight: 600;
+      font-size: var(--hctc-txt-size-lg);
+      letter-spacing: 2px;
+      @include font-1;
+      outline: 0;
+      box-shadow: unset;
+      &::placeholder {
+        color: var(--hctc-theme-color-1) !important;
+      }
+    }
+    button[type="submit"] {
+      @include font-1;
+    }
+  }
+  // results
+  .basel-scroll {
+    box-shadow: 0 0 5px 0px var(--hctc-theme-color-1) !important;
+    border-radius: var(--hctc-border-radius-default);
+    .basel-search-results {
+      display: flex;
+    }
+    .autocomplete-suggestions {
+      box-shadow: 0 0 5px 0px var(--hctc-theme-color-1) !important;
+      border-radius: var(--hctc-border-radius-default);
+      background-color: var(--hctc-theme-color-6) !important;
+      width: 100% !important;
+      .autocomplete-suggestion {
+        border-color: var(--hctc-theme-color-1);
+        &:hover,
+        &:focus,
+        &:active {
+          .suggestion-title {
+            color: var(--hctc-theme-color-1);
+          }
+        }
+        .suggestion-title {
+          transition: var(--hctc-transition-global);
+          color: var(--hctc-theme-color-3);
+          @include font-2;
+          strong {
+            color: var(--hctc-theme-color-1);
+          }
+        }
+      }
+      .view-all-result {
+        text-transform: uppercase;
+        font-size: var(--hctc-txt-size-sm);
+        span {
+          color: var(--hctc-theme-color-3);
+          border: unset;
+        }
+      }
+    }
+  }
+}
