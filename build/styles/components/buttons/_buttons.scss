@@ -36,6 +36,23 @@ $btn-transparent-txt-color-active: var(--hctc-theme-color-1);
 // night mode styling found in global/night-mode
 $box-shadow-light-color: rgb(255, 193, 7);
 .c_btn {
+  &--nav {
+    @include min-lg {
+      display: none;
+    }
+    z-index: 9;
+    position: Relative;
+    background-color: transparent;
+    color: var(--hctc-theme-color-3);
+    font-size: var(--hctc-txt-size-lg);
+    border: 0;
+    margin-left: var(--hctc-spacing-sm);
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
+    }
+  }
   &--night-mode {
     width: 20px;
     height: 20px;
