@@ -10,9 +10,13 @@
 @import "./slider/slider";
 /* layout */
 @import "./header/header";
+@import "./footer/footer";
 @import "./navigation/navigation";
 /* content */
+@import "./admin-panel-styles/admin-panel-styles";
+@import "./separator/separator";
 @import "./posts/posts";
 @import "./articles/articles";
 @import "./ads-banner/ads-banner";
 @import "./affiliate-links/affiliate-links";
+@import "./render-post/render-post";
