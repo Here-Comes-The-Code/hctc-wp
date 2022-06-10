@@ -1,0 +1,38 @@
+footer {
+  &.footer-container {
+    position: relative;
+    background-color: var(--hctc-footer-background-color);
+    z-index: 1;
+    &::after {
+      content: " ";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background-image: url("../assets/footer-bg.jpg");
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.1;
+    }
+  }
+
+  .widget-title {
+    font-size: var(--hctc-txt-size-xl);
+  }
+
+  p,
+  a {
+    @include font-2(true);
+  }
+}
+
+.c-tags {
+  &__item {
+    padding: 0 var(--hctc-spacing-sm);
+    border-right: 1px solid;
+    &:last-child {
+      border-right: unset;
+    }
+  }
+}
