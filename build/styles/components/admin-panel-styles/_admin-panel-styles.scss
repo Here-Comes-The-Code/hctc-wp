@@ -1,0 +1,24 @@
+// reset table styles
+
+table tbody tr td,
+table tbody tr th {
+  font-size: inherit !important;
+}
+
+.acf-accent {
+  background-color: rgb(187, 255, 187, 0.7);
+}
+
+.acf-table {
+  .acf-row {
+    &:nth-child(even) {
+      .acf-fields {
+        border-top: 2px solid rgba(0, 0, 0, 0.3) !important;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.3) !important;
+        .acf-field {
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+  }
+}
