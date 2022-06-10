@@ -95,9 +95,9 @@ foreach ($ads_cfg as $group) {
                         <?php endif; ?>
                     <?php endforeach; ?>
                 </div>
-                <div class="c_ad__slider-pagination swiper-pagination"></div>
             </div>
-            <div class="c_ad__slider-button-prev swiper-button-prev"></div>
-            <div class="c_ad__slider-button-next swiper-button-next"></div>
+            <div class="c_ad__slider-pagination swiper-pagination"></div>
+            <!-- <div class="c_ad__slider-button-prev swiper-button-prev"></div> -->
+            <!-- <div class="c_ad__slider-button-next swiper-button-next"></div> -->
         <?php endif; ?>
 </section>
