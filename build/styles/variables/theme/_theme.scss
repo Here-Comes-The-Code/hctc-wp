@@ -33,12 +33,15 @@ $hctc-theme-variables: (
   "header-background-color": var(--hctc-theme-color-2),
   "header-txt-color": var(--hctc-theme-color-3),
   "header-sub-nav-color-bg": var(--hctc-theme-color-6),
+  // footer
+  "footer-background-color": var(--hctc-theme-color-2),
   // spacings
   "spacing-sm": 0.5rem,
   "spacing-md": 0.75rem,
   "spacing-lg": 1rem,
   "spacing-xl": 1.5rem,
   "spacing-xxl": 2rem,
+  "spacing-grid": var(--hctc-spacing-lg),
   // article
   "article-max-width": 100ch,
   "article-font-size": var(--hctc-txt-size-xl),
@@ -47,7 +50,12 @@ $hctc-theme-variables: (
   // ad
   "ad-banner-height": 250px,
   // border-radius
-  "border-radius-default": 5px
+  "border-radius-default": 5px,
+  "border-radius-sm": 5px,
+  "border-radius-md": 10px,
+  // box-shadow
+  "box-shadow-sm": 0 0 5px 0 var(--hctc-theme-color-4),
+  "box-shadow-md": 0 0 10px 0 var(--hctc-theme-color-4)
 );
 // Expose variables
 :root {
