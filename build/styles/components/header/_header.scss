@@ -3,7 +3,6 @@ $header-icon-size: 35px;
 
 $header-sub-nav-color: var(--hctc-theme-color-6);
 
-
 $z-index-header: 99;
 $z-index-logo: 1;
 $z-index-social-icons: 99;
@@ -187,6 +186,11 @@ header.main-header {
           position: absolute;
           left: 50%;
           transform: translateX(-50%);
+          @include min-md {
+            transform: unset;
+            left: unset;
+            right: 0;
+          }
           top: 90%;
           padding: var(--hctc-spacing-sm);
           background-color: var(--hctc-theme-color-6);
