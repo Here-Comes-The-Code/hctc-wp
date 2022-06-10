@@ -472,14 +472,14 @@ add_action('wp_head', 'add_fb_like_btn');
 // Ads configuration
 if (function_exists('acf_add_options_page')) {
 	acf_add_options_page(array(
-		'page_title' => 'Reklamy SmartMe',
-		'menu_title' => 'Reklamy',
+		'page_title' => 'Strona główna',
+		'menu_title' => 'Strona główna',
 		'menu_slug' => 'smartme-options-main',
 		'capability' => 'edit_posts',
 		'redirect' => true,
 		'icon_url' => '
 	dashicons-nametag',
-		'position' => 5,
+		'position' => 1,
 	));
 }
 
@@ -642,3 +642,10 @@ function link_whisper_link_classes($classes = '', $is_external = false, $locatio
 	$classes .= ' bold-lw-link';
 	return $classes;
 }
+
+// attach styles to admin
+function admin_style()
+{
+	wp_enqueue_style('admin-styles', get_stylesheet_directory_uri() . '/dist/style.css',null, filemtime(get_stylesheet_directory() . '/dist/style.css'));
+}
+add_action('admin_enqueue_scripts', 'admin_style');
