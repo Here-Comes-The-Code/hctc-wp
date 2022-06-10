@@ -29,12 +29,20 @@ table {
   }
 }
 
-@mixin font-1 {
-  font-family: "League Gothic", sans-serif !important;
+@mixin font-1($important: false) {
+  @if ($important == true) {
+    font-family: "League Gothic", sans-serif !important;
+  } @else {
+    font-family: "League Gothic", sans-serif;
+  }
 }
 
-@mixin font-2 {
-  font-family: "Cantarell", sans-serif !important;
+@mixin font-2($important: false) {
+  @if ($important == true) {
+    font-family: "Fira Sans", sans-serif !important;
+  } @else {
+    font-family: "Fira Sans", sans-serif;
+  }
 }
 
 // set all to cantarell font
@@ -44,7 +52,7 @@ body.home {
   li,
   p,
   div {
-    font-family: "Cantarell", sans-serif !important;
+    font-family: "Fira Sans", sans-serif;
   }
 }
 
@@ -55,6 +63,6 @@ body.home {
   h4,
   h5,
   h6 {
-    font-family: "Fjalla One", sans-serif !important;
+    font-family: "League Gothic", sans-serif;
   }
 }
