@@ -1,0 +1,30 @@
+$section-spacing: var(--hctc-spacing-xl);
+.l-section {
+  padding: 0 var(--hctc-spacing-grid);
+  @include min-md {
+    padding: 0;
+  }
+  &:first-child {
+    margin-top: $section-spacing;
+  }
+  margin-bottom: $section-spacing;
+  &--restrict-width {
+    @include padding-max-width;
+  }
+  &--content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items:flex-start;
+    align-content:flex-start;
+  }
+  &-grid {
+    gap: var(--hctc-spacing-grid);
+    display: grid;
+    &--one-third {
+      grid-template-columns: 1fr; 
+      @include min-xl {
+        grid-template-columns: 2.4fr 1fr;
+      }
+    }
+  }
+}

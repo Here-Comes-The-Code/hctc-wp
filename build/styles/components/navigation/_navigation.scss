@@ -154,7 +154,7 @@ $nav-hover-color-accent: var(--hctc-theme-color-2);
       background-color: var(--hctc-theme-color-6) !important;
       @include header-box-shadow-property-light;
       position: fixed !important;
-      top: var(--hctc-header-height) !important;
+      top: unset !important;
       left: 0 !important;
       width: 100vw !important;
       @include padding-max-width;
