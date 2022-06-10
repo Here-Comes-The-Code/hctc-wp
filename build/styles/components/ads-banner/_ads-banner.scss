@@ -1,11 +1,20 @@
+$pagination-bullet-size: 12px;
+
 .c_ad {
   &__container {
   }
   &__wrapper {
     position: relative;
+    > img {
+      height: 1px;
+      width: 1px;
+    }
   }
   &__slider {
     &-container {
+      border-radius: var(--hctc-border-radius-md);
+      box-shadow: var(--hctc-box-shadow-md);
+      overflow: hidden;
       &:hover,
       &:focus,
       &:active {
@@ -19,11 +28,15 @@
     &-slide {
     }
     &-pagination {
-      bottom: 10px !important;
+      bottom: 15px !important;
       height: 12px;
       width: 12px;
       .swiper-pagination-bullet.swiper-pagination-bullet-active {
         background-color: var(--hctc-theme-color-1) !important;
+      }
+      .swiper-pagination-bullet {
+        width: $pagination-bullet-size;
+        height: $pagination-bullet-size;
       }
     }
     &-button {
@@ -55,7 +68,7 @@
         width: 40px;
         height: 40px;
         box-shadow: none;
-        transition: 0.5s;
+        // transition: 0.5s;
         z-index: 11;
         opacity: 1;
         color: var(--hctc-theme-color-1);
@@ -103,6 +116,7 @@
       }
     }
   }
+
   &__intro {
     &-container {
       position: relative;
@@ -174,30 +188,46 @@
       flex-direction: column;
       text-align: center;
       text-decoration: none !important;
-      transition: 0.5s;
+      // transition: 0.5s;
 
       &:hover,
       &:focus,
       &:active {
         .c_ad__banner-img-container {
           box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-          transition: 0.5s;
+          // transition: 0.5s;
         }
       }
     }
     &-img {
       &-container {
+        $mobile-height: 100px;
+        $tablet-height: 140px;
+        $desktop-height: var(--hctc-ad-banner-height);
         display: flex;
         align-items: center;
         justify-content: center;
-        max-height: var(--hctc-ad-banner-height);
+        width: 100%;
+        height: $mobile-height;
+        max-height: $mobile-height;
+        @include min-sm {
+          height: $tablet-height;
+          max-height: $tablet-height;
+        }
+        @include min-lg {
+          height: $desktop-height;
+          max-height: $desktop-height;
+        }
+        // height: Fit-content;
         overflow: hidden;
+
         img {
           height: auto;
-          width: 100%;
-          @media (max-width: 767px) {
-            min-height: 80px;
-            width: auto;
+          min-height: 100%;
+          min-width: 125%;
+          @include min-sm {
+            min-width: 100%;
+            max-width: 120%;
           }
         }
       }
