@@ -14,3 +14,11 @@
 @mixin header-box-shadow-property {
   box-shadow: 0 0 15px 0px var(--hctc-theme-color-1);
 }
+
+@mixin onHover {
+  &:hover,
+  &:active,
+  &:focus {
+    @content;
+  }
+}
