@@ -17,113 +17,60 @@ export function handleSliders() {
       }
     });
   }
-
+  const scrollSlider = {
+    HTMLref: '.js-swiper-scroll',
+    instance: null,
+    config: {
+      direction: 'vertical',
+      slidesPerView: 'auto',
+      freeMode: true,
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+      mousewheel: true,
+    },
+    get instanceRef() {
+      return this.instance;
+    },
+    events: [],
+    functions: [],
+  };
   const bannerSlider = {
     HTMLref: '.c_ad__slider-container',
     instance: null,
     config: {
-      navigation: {
-        nextEl: '.c_ad__slider-button-prev.swiper-button-next',
-        prevEl: '.c_ad__slider-button-prev.swiper-button-prev',
+      // navigation: {
+      //   nextEl: '.c_ad__slider-button-prev.swiper-button-next',
+      //   prevEl: '.c_ad__slider-button-prev.swiper-button-prev',
+      // },
+      pagination: {
+        el: '.c_ad__slider-pagination.swiper-pagination',
+        clickable: true,
       },
-      speed: 500,
+      speed: 1500,
+      effect: 'fade',
+      fadeEffect: { crossFade: true },
+      observeParents: true,
+      observer: true,
       loop: true,
+      virtualTranslate: true,
+
       grabCursor: true,
-      // autoHeight:true, effect: 'fade', fadeEffect: {     crossFade: true },
       keyboard: {
         enabled: true,
       },
       autoplay: {
         disableOnInteraction: false,
-        delay: 6000,
+        delay: 4000,
       },
-      updateOnWindowResize: true,
-      // preloadImages: true,
-      updateOnImagesReady: true,
     },
     get instanceRef() {
       return this.instance;
     },
-    events: [
-      {
-        event: 'slideChange',
-        body: function (event, slider) {
-          slider.on(event, () => {
-            slider.update();
-            // slider.updateAutoHeight();
-          });
-        },
-      },
-    ],
-    functions: [
-      {
-        body: function (slider) {
-          const nextSlideBtn = document.querySelector(
-            '.c_ad__slider-button-next.swiper-button-next'
-          );
-          const prevSlideBtn = document.querySelector(
-            '.c_ad__slider-button-prev.swiper-button-prev'
-          );
-          if (nextSlideBtn) {
-            nextSlideBtn.addEventListener('click', () => {
-              slider.slideNext();
-            });
-          }
-          if (prevSlideBtn) {
-            prevSlideBtn.addEventListener('click', () => {
-              slider.slidePrev();
-            });
-          }
-
-          setTimeout(() => {
-            if (slider.slides) {
-              slider.slides.forEach((slide) => {
-                const img = slide.firstElementChild.querySelector('img');
-                const imgParent = img.parentElement.parentElement;
-                createImgClone(
-                  img,
-                  hasEqualSize(img, imgParent),
-                  'c_img--clone',
-                  'c_img--clone-parent',
-                  imgParent
-                );
-              });
-            }
-          }, 2000);
-
-          function hasEqualSize(refEl, targetEl) {
-            const hasEqualWidth =
-              refEl.getBoundingClientRect().width ===
-              targetEl.getBoundingClientRect().width;
-            const hasEqualHeight =
-              refEl.getBoundingClientRect().height ===
-              targetEl.getBoundingClientRect().height;
-
-            return hasEqualWidth && hasEqualHeight ? true : false;
-          }
-
-          function createImgClone(
-            imgHTMLElement,
-            hasEqualSize,
-            cssClass,
-            parentCssClass,
-            parentElement
-          ) {
-            if (hasEqualSize) {
-              const newImg = imgHTMLElement.cloneNode(true);
-              newImg.classList.add(cssClass);
-              parentElement
-                ? parentElement.classList.add(parentCssClass)
-                : imgHTMLElement.parentElement.classList.add(parentCssClass);
-              imgHTMLElement.classList.add('c_img--clone-ref');
-              imgHTMLElement.parentElement.appendChild(newImg);
-            }
-          }
-        },
-      },
-    ],
+    events: [],
+    functions: [],
   };
 
-  sliders.push(bannerSlider);
+  sliders.push(bannerSlider, scrollSlider);
   initializeSliders(sliders);
 }
