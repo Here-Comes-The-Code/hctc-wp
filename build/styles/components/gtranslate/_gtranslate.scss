@@ -1,5 +1,6 @@
 $z-index-gtranslate: 99;
 $z-index-gtranslate-icon: 2;
+$z-index-gtranslate-default: 1;
 // switcher
 .switcher {
   z-index: $z-index-gtranslate;
@@ -72,7 +73,7 @@ $z-index-gtranslate-icon: 2;
       filter: invert(1) hue-rotate(172deg);
       bottom: 0;
       left: 0;
-      z-index: $z-index-gtranslate-icon;
+      z-index: $z-index-gtranslate-default;
       position: absolute !important;
     }
   }
