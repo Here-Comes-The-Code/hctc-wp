@@ -7,21 +7,30 @@ $z-index-header: 99;
 $z-index-logo: 1;
 $z-index-social-icons: 99;
 
+// hide sticky header copied by basel
 .sticky-header {
   display: none !important;
 }
+
+.website-wrapper {
+  overflow: unset;
+}
+
 header.main-header {
+  position: sticky;
+  top: 0;
   height: unset;
   max-height: unset;
   @include min-sm {
     height: $header-max-height;
     max-height: $header-max-height;
+    margin-bottom: calc(2.5 * var(--hctc-spacing-grid));
   }
   background-color: var(--hctc-header-background-color);
   margin-right: 0;
   margin-left: 0;
   z-index: $z-index-header;
-  position: relative;
+  // position: relative;
   > .container {
     width: 100% !important;
     margin: 0 !important;
