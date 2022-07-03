@@ -20,7 +20,7 @@ get_header(); ?>
 /* Ad - banner, normal
 -------------------------------- */
 ?>
-<section class='l-section'>
+<section class='l-section l-section--restrict-width '>
     <?php
     get_template_part(
         'template-parts/home/separator',
@@ -38,7 +38,7 @@ get_header(); ?>
 /* "Featured"
 -------------------------------- */
 ?>
-<section class='l-section l-section-grid l-section-grid--one-third'>
+<section class='l-section l-section--restrict-width  l-section-grid l-section-grid--one-third'>
     <?php
     // featured 
     ?>
@@ -125,7 +125,7 @@ get_header(); ?>
     /* "News"
 -------------------------------- */
     ?>
-    <div class='l-section--content-wrapper'>
+    <div class=' l-section--content-wrapper'>
         <?php
         // separator
         $acf_news_separator_title = get_field('news', 'options')['sep']['title'];
@@ -182,7 +182,7 @@ get_header(); ?>
 
     </div>
 </section>
-<section class='l-section'>
+<section class='l-section l-section--restrict-width '>
     <?php
     /* "Ad - optads"
 -------------------------------- */
@@ -229,12 +229,12 @@ if ($q->have_posts()) {
     wp_reset_postdata();
 }
 // if no main is selected, pick it from the array
-if (! $acf_reviews_main_column) {
+if (!$acf_reviews_main_column) {
     $acf_reviews_main_review = $acf_reviews_posts[0];
     array_shift($acf_reviews_posts);
 }
 ?>
-<section class='l-section'>
+<section class='l-section l-section--restrict-width  c-media--deco'>
     <?php
     get_template_part(
         'template-parts/home/separator',
@@ -282,6 +282,130 @@ if (! $acf_reviews_main_column) {
     </div>
 
 </section>
+<!-- Media -->
+<?php
+$acf_media_data = get_field('media', 'options');
+$acf_audio = $acf_media_data['podcast'];
+$acf_videos_latest = $acf_media_data['videos'];
+$acf_selected_video = $acf_media_data['video-main'];
+
+$acf_media_separator = $acf_media_data['sep'];
+$acf_media_separator_title = $acf_media_separator['title'];
+$acf_media_separator_url = $acf_media_separator['url'];
+$acf_media_separator_readmore = $acf_media_separator['read-more'];
+
+?>
+
+<section class='l-section c-media'>
+    <div class='c-media__bg''>
+     <img  src="<?php echo $acf_media_data['background']['url']; ?>" alt="">
+    </div>
+    <div class=' c-media__title l-section--restrict-width '>
+        <?php echo $acf_media_data['title']; ?>
+    </div>
+    <div class=' c-media__content l-section-grid l-section-grid--one-two l-section--restrict-width '>
+        <div class=' c-media__item c-media__item--audio'>
+        <?php echo $acf_audio; ?>
+    </div>
+    <div class='c-media__item c-media__item--video'>
+        <?php
+        if ($acf_selected_video) :
+        ?>
+            <iframe width="700" height="340" src="<?php echo str_replace('watch?v=', 'embed/', $acf_selected_video); ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <?php endif; ?>
+        <?php
+        if (!$acf_selected_video) :
+        ?>
+            <?php echo $acf_videos_latest; ?>
+        <?php endif; ?>
+    </div>
+    </div>
+    <div class='c-media__controls l-section--restrict-width'>
+        <span>
+            <?php echo $acf_media_data['title-controls']; ?>
+        </span>
+        <div>
+            <?php
+            foreach ($acf_media_data['controls'] as $button) :
+            ?>
+                <a class='' href='<?php echo $button['button'] ?>'>
+                    <?php echo $button['button']['title'] ?>
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+<!-- Sponsored -->
+<?php
+$acf_sponsored_main_data = get_field('sponsored_main', 'options');
+/* separator */
+$acf_sponsored_main_separator = $acf_sponsored_main_data['sep'];
+$acf_sponsored_main_separator_title = $acf_sponsored_main_separator['title'];
+$acf_sponsored_main_separator_url = $acf_sponsored_main_separator['url'];
+$acf_sponsored_main_separator_readmore = $acf_sponsored_main_separator['read-more'];
+/* sponsored article */
+$acf_sponsored_active = $acf_sponsored_main_data['is-active'];
+$acf_sponsored_post = get_post($acf_sponsored_main_data['post']);
+$acf_sponsored_section_title = $acf_sponsored_main_data['section-title'];
+$acf_sponsored_section_excerpt = $acf_sponsored_main_data['excerpt'];
+$acf_sponsored_section_color = $acf_sponsored_main_data['color'];
+$acf_sponsored_section_additional = $acf_sponsored_main_data['additional'];
+$acf_sponsored_section_logo = $acf_sponsored_main_data['logo'];
+?>
+
+<?php if ($acf_sponsored_active) : ?>
+    <section class='l-section l-section--restrict-width  c-media--deco-inv'>
+        <?php
+        get_template_part(
+            'template-parts/home/separator',
+            null,
+            array(
+                'title' => $acf_sponsored_main_separator_title,
+                'url' => $acf_sponsored_main_separator_url,
+                'readmore' => $acf_sponsored_main_separator_readmore,
+                'img' => $acf_sponsored_section_logo,
+                'color' => $acf_sponsored_section_color,
+                'class' => "color",
+            )
+        );
+        ?>
+        <?php if ($acf_sponsored_section_color) : ?>
+            <style>
+                .c-post-primary--sponsored .c-post__img {
+                    box-shadow: 0 0 15px 0 <?php echo $acf_sponsored_section_color; ?>;
+                }
+            </style>
+        <?php endif; ?>
+        <?php
+        get_template_part(
+            'template-parts/home/render-post',
+            null,
+            array(
+                'post' => $acf_sponsored_post,
+                'class' => 'c-post-primary__main c-post-primary--reversed c-post-primary--sponsored',
+                'section-title' => $acf_sponsored_section_title,
+                'add-excerpt' => true,
+                'custom-excerpt' => $acf_sponsored_section_excerpt
+            )
+        );
+        ?>
+        <div class='c-post-primary__micro-wrapper c-separator__raw--top'>
+            <?php if ($acf_sponsored_section_additional) : ?>
+                <?php foreach ($acf_sponsored_section_additional as $post) {
+                    get_template_part(
+                        'template-parts/home/render-post',
+                        null,
+                        array(
+                            'post' => $post,
+                            'class' => 'c-post-primary__micro ',
+                        )
+                    );
+                } ?>
+            <?php endif; ?>
+        </div>
+    </section>
+
+<?php endif; ?>
 <!-- Guides -->
 <?php
 $acf_guides_data = get_field('guides', 'options');
@@ -290,7 +414,7 @@ $acf_guides_separator = $acf_guides_data['sep'];
 $acf_guides_separator_title = $acf_guides_separator['title'];
 $acf_guides_separator_url = $acf_guides_separator['url'];
 $acf_guides_separator_readmore = $acf_guides_separator['read-more'];
-/* reviews */
+/* guides data */
 $acf_guides_main_guide = $acf_guides_data['main-post'];
 $acf_guides_section_title = $acf_guides_data['section-title'];
 $acf_guides_category_id = $acf_guides_data['category-id'];
@@ -313,12 +437,15 @@ if ($q->have_posts()) {
     wp_reset_postdata();
 }
 // if no main review is selected, pick it from the array
-if (! $acf_guides_main_guide) {
+if (!$acf_guides_main_guide) {
     $acf_guides_main_guide = $acf_guides_posts[0];
     array_shift($acf_guides_posts);
 }
 ?>
-<section class='l-section'>
+
+<section class='l-section l-section--restrict-width <?php if ($acf_sponsored_active == false) {
+                                                        echo 'c-media--deco-inv';
+                                                    } ?>'>
     <?php
     get_template_part(
         'template-parts/home/separator',
@@ -396,13 +523,13 @@ if ($q->have_posts()) {
     wp_reset_postdata();
 }
 // if no main is selected, pick it from the array
-if (! $acf_columns_main_column) {
+if (!$acf_columns_main_column) {
     $acf_columns_main_column = $acf_columns_posts[0];
     array_shift($acf_columns_posts);
 }
 
 ?>
-<section class='l-section'>
+<section class='l-section l-section--restrict-width '>
     <?php
     get_template_part(
         'template-parts/home/separator',
@@ -449,7 +576,7 @@ if (! $acf_columns_main_column) {
     </div>
 
 </section>
-<section class='l-section'>
+<section class='l-section l-section--restrict-width '>
     <?php
     /* "Ad - optads"
 -------------------------------- */
