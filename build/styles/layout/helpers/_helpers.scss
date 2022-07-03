@@ -14,17 +14,34 @@ $section-spacing: var(--hctc-spacing-xl);
   &--content-wrapper {
     display: flex;
     flex-wrap: wrap;
-    align-items:flex-start;
-    align-content:flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
   }
   &-grid {
     gap: var(--hctc-spacing-grid);
     display: grid;
     &--one-third {
-      grid-template-columns: 1fr; 
+      grid-template-columns: 1fr;
       @include min-xl {
         grid-template-columns: 2.4fr 1fr;
       }
     }
+    &--one-two {
+      grid-template-columns: 1fr;
+      @include min-xl {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}
+
+.home {
+  .main-page-wrapper {
+    > .container {
+      width: unset !important;
+    }
+    .l-section { 
+      
+     }
   }
 }
