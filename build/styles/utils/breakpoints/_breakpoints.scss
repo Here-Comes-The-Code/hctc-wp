@@ -6,6 +6,8 @@ $max-width-full: calc(
 $max-width-side: calc($max-width-full / 2);
 // max-width-container
 @mixin padding-max-width {
+  padding-left:var(--hctc-spacing-grid);
+  padding-right:var(--hctc-spacing-grid);
   @media only screen and (min-width: map.get($hctc-theme-variables, "max-content-width")) {
     padding-left: $max-width-side;
     padding-right: $max-width-side;
