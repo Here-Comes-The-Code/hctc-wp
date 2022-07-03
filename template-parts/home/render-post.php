@@ -2,6 +2,7 @@
 $post = $args['post'];
 $section_title = $args['section-title'];
 $add_excerpt = $args['add-excerpt'];
+$custom_excerpt = $args['custom-excerpt'];
 $class = $args['class'];
 // post metadata
 $id = $post->ID;
@@ -50,22 +51,24 @@ $category_link = get_category_link($category[0]->term_id);
       <?php echo $author_name; ?>
     </a>
     <?php
-    if ($add_excerpt) :
+    if ($add_excerpt || strlen($custom_excerpt) > 0) :
     ?>
 
       <a href="<?php echo $post_link; ?>" class='c-post__txt-excerpt'><?php
+        $excerpt = strip_tags($post->post_content);
+        if(strlen($custom_excerpt) > 0) { 
+          echo $custom_excerpt;
+          return;
+          }
+        elseif (strlen($excerpt) > $post_excerpt_length) {
+          $excerpt = substr($excerpt, 0, $post_excerpt_length);
+            $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
 
-
-                                        $excerpt = strip_tags($post->post_content);
-                                        if (strlen($excerpt) > $post_excerpt_length) {
-                                          $excerpt = substr($excerpt, 0, $post_excerpt_length);
-                                           $excerpt = substr($excerpt, 0, strrpos($excerpt, ' '));
-
-                                          $excerpt = preg_replace("/\[[^)]+\]/", "", $excerpt);
-                                          $excerpt .= '... <strong>[czytaj dalej]</strong>';
-                                        }
-                                        echo $excerpt;
-                                        ?></a>
+          $excerpt = preg_replace("/\[[^)]+\]/", "", $excerpt);
+          $excerpt .= '... <strong>[czytaj dalej]</strong>';
+        }
+        echo $excerpt;
+        ?></a>
     <?php
     endif;
     ?>
